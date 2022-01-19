@@ -1,5 +1,8 @@
 <% ValeraAction.all.each do |valera_action| %>
-    <%= valera_action.name%>
+    <%= button_to valera_action.name, edit_user_state_path(@state), method: 'update' %>
   <% end %>
 <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+
+
+
 <%#= render 'valera_actions/list' %>

@@ -6704,3 +6704,1484 @@ Processing by StatesController#new as HTML
 Completed 200 OK in 104ms (Views: 70.6ms | ActiveRecord: 17.7ms | Allocations: 8639)
 
 
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:13:06 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (4.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 41.2ms | Allocations: 8516)
+  Rendered states/new.html.erb within layouts/application (Duration: 50.5ms | Allocations: 8967)
+  Rendered layout layouts/application.html.erb (Duration: 66.3ms | Allocations: 9041)
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 31.1ms | Allocations: 22746)
+
+
+  
+ActionView::Template::Error (undefined method `update' for StatesController:Class):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, :action => StatesController.update %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:14:33 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 35.0ms | Allocations: 2414)
+  Rendered states/new.html.erb within layouts/application (Duration: 42.1ms | Allocations: 2846)
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | Allocations: 2920)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 7.0ms | Allocations: 5012)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:14:54 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (7.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 38.4ms | Allocations: 2409)
+  Rendered states/new.html.erb within layouts/application (Duration: 57.1ms | Allocations: 2841)
+  Rendered layout layouts/application.html.erb (Duration: 64.1ms | Allocations: 2915)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 13.8ms | Allocations: 5007)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path(current_user), class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:15:48 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (23.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (10.7ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 37.6ms | Allocations: 2410)
+  Rendered states/new.html.erb within layouts/application (Duration: 59.4ms | Allocations: 2842)
+  Rendered layout layouts/application.html.erb (Duration: 66.6ms | Allocations: 2916)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 34.4ms | Allocations: 5011)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path(id: current_user.id), class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:19:10 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 24.6ms | Allocations: 5578)
+  Rendered states/new.html.erb within layouts/application (Duration: 33.9ms | Allocations: 6010)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 6084)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 6.9ms | Allocations: 8176)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<ActionView::Base:0x0000000002f6e8>
+Did you mean?  @user):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [user.state, user], method: :update %>
+    3: 
+    4:   <% end %>
+    5: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:19:23 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (17.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.6ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (12.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 145.4ms | Allocations: 8467)
+  Rendered states/new.html.erb within layouts/application (Duration: 153.3ms | Allocations: 8907)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 181.8ms | Allocations: 15598)
+Completed 200 OK in 245ms (Views: 178.0ms | ActiveRecord: 30.9ms | Allocations: 17743)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:19:26 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:19:29 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (2.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 44.3ms | Allocations: 2692)
+  Rendered states/new.html.erb within layouts/application (Duration: 49.9ms | Allocations: 2800)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 79.8ms | Allocations: 9186)
+Completed 200 OK in 135ms (Views: 84.8ms | ActiveRecord: 19.3ms | Allocations: 10474)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:19:38 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:19:47 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (1.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 32.6ms | Allocations: 2620)
+  Rendered states/new.html.erb within layouts/application (Duration: 36.1ms | Allocations: 2728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 9119)
+Completed 200 OK in 96ms (Views: 66.1ms | ActiveRecord: 3.8ms | Allocations: 10279)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:29:38 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.7ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (1.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 56.4ms | Allocations: 8971)
+  Rendered states/new.html.erb within layouts/application (Duration: 63.5ms | Allocations: 9420)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 85.4ms | Allocations: 16106)
+Completed 200 OK in 167ms (Views: 94.2ms | ActiveRecord: 24.1ms | Allocations: 29861)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:29:40 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:29:47 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.7ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (2.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 38.8ms | Allocations: 2619)
+  Rendered states/new.html.erb within layouts/application (Duration: 56.0ms | Allocations: 2727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.8ms | Allocations: 9118)
+Completed 200 OK in 127ms (Views: 79.6ms | ActiveRecord: 9.1ms | Allocations: 10320)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:30:07 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (2.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (8.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 116.2ms | Allocations: 9595)
+  Rendered states/new.html.erb within layouts/application (Duration: 120.6ms | Allocations: 9729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 148.4ms | Allocations: 16225)
+Completed 200 OK in 311ms (Views: 149.9ms | ActiveRecord: 123.0ms | Allocations: 27525)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:30:08 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:33:09 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:33:13 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (2.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (2.7ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 102.5ms | Allocations: 9596)
+  Rendered states/new.html.erb within layouts/application (Duration: 119.0ms | Allocations: 9730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 213.8ms | Allocations: 16227)
+Completed 200 OK in 306ms (Views: 227.1ms | ActiveRecord: 27.8ms | Allocations: 27308)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:33:15 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:36:03 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:36:23 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:36:50 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:36:52 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 35.0ms | Allocations: 7977)
+  Rendered states/new.html.erb within layouts/application (Duration: 39.8ms | Allocations: 8423)
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 8497)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 24.9ms | Allocations: 20259)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path%>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/valera_actions" for 127.0.0.1 at 2022-01-20 02:36:54 +0700
+Processing by ValeraActionsController#show as HTML
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms | Allocations: 737)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ValeraAction without an ID):
+  
+app/controllers/valera_actions_controller.rb:7:in `show'
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:37:06 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (1.8ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 29.7ms | Allocations: 3998)
+  Rendered states/new.html.erb within layouts/application (Duration: 39.8ms | Allocations: 4430)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 4504)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 14.3ms | Allocations: 6610)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [@user.state], method: :edit %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:37:14 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (18.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (2.0ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (4.5ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 32.8ms | Allocations: 3106)
+  Rendered states/new.html.erb within layouts/application (Duration: 37.5ms | Allocations: 3538)
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 3612)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 25.3ms | Allocations: 5680)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [@user.state], method: :update %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:37:19 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (17.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (9.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 103.9ms | Allocations: 3125)
+  Rendered states/new.html.erb within layouts/application (Duration: 127.9ms | Allocations: 3558)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 187.5ms | Allocations: 10323)
+Completed 200 OK in 265ms (Views: 195.7ms | ActiveRecord: 33.5ms | Allocations: 12437)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:37:24 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:37:59 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:38:03 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (12.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 87.1ms | Allocations: 3304)
+  Rendered states/new.html.erb within layouts/application (Duration: 92.3ms | Allocations: 3735)
+  Rendered layout layouts/application.html.erb (Duration: 115.4ms | Allocations: 3809)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 24.7ms | Allocations: 5828)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  user_state_url
+               user_states_url
+               user_states_path
+               edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [@user.state, user_state_path], method: :update %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:38:18 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (16.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (10.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (5.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 72.4ms | Allocations: 3054)
+  Rendered states/new.html.erb within layouts/application (Duration: 92.1ms | Allocations: 3484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 115.8ms | Allocations: 10249)
+Completed 200 OK in 217ms (Views: 139.3ms | ActiveRecord: 32.3ms | Allocations: 12366)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:41:29 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (7.8ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (1.9ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 94.0ms | Allocations: 9574)
+  Rendered states/new.html.erb within layouts/application (Duration: 101.8ms | Allocations: 9708)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 139.4ms | Allocations: 16199)
+Completed 200 OK in 326ms (Views: 147.3ms | ActiveRecord: 87.6ms | Allocations: 27322)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:41:31 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:42:07 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:42:21 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:45:06 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:46:41 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:47:32 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:47:34 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (15.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (2.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 73.1ms | Allocations: 12790)
+  Rendered states/new.html.erb within layouts/application (Duration: 80.8ms | Allocations: 13236)
+  Rendered layout layouts/application.html.erb (Duration: 88.8ms | Allocations: 13310)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 41.6ms | Allocations: 25071)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `update' for #<ActionView::Base:0x00000000042a90>):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [@user.state, @user], method: update %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', nesw_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:47:46 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:47:48 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:47:50 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:47:53 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:47:53 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:47:58 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:47:59 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:48:03 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:48:05 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:48:05 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:48:08 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:48:15 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:48:18 +0700
+Started PUT "/__web_console/repl_sessions/ed63ad5317a0209c33f1ff75d527746b" for 127.0.0.1 at 2022-01-20 02:48:18 +0700
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:51:40 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (2.0ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (1.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 61.0ms | Allocations: 7426)
+  Rendered states/new.html.erb within layouts/application (Duration: 72.2ms | Allocations: 7861)
+  Rendered layout layouts/application.html.erb (Duration: 87.1ms | Allocations: 7935)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 12.3ms | Allocations: 10003)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `nesw_valera_actions_path' for #<ActionView::Base:0x00000000042e28>
+Did you mean?  new_valera_actions_path
+               new_valera_actions_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [@user.state, @user], method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', nesw_valera_actions_path, class: "categorieOptions" %>
+    5: 
+    6: 
+    7: 
+  
+app/views/valera_actions/_index.html.erb:4
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:51:52 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (5.6ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  [1m[36mState Load (1.7ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/valera_actions/_index.html.erb:2
+  Rendered valera_actions/_index.html.erb (Duration: 63.7ms | Allocations: 3057)
+  Rendered states/new.html.erb within layouts/application (Duration: 83.4ms | Allocations: 3488)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 146.5ms | Allocations: 10253)
+Completed 200 OK in 225ms (Views: 173.0ms | ActiveRecord: 10.2ms | Allocations: 12366)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-20 02:51:55 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:52:48 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (3.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 52.0ms | Allocations: 2431)
+  Rendered states/new.html.erb within layouts/application (Duration: 74.9ms | Allocations: 2862)
+  Rendered layout layouts/application.html.erb (Duration: 101.4ms | Allocations: 2936)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 12.3ms | Allocations: 4956)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  user_state_url
+               user_states_url
+               user_states_path
+               edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, user_state_path, method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:53:01 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (3.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 66.8ms | Allocations: 2031)
+  Rendered states/new.html.erb within layouts/application (Duration: 101.3ms | Allocations: 2461)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 170.8ms | Allocations: 9227)
+Completed 200 OK in 254ms (Views: 194.1ms | ActiveRecord: 11.2ms | Allocations: 11364)
+
+
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 02:53:03 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"em9g1u_uU6Zwo5XgX-ahf_Wax8bN23ir6o6E3Q3X0dGN2GF2v7Yt-4q3BhuTKTZzeIVZ8aHqXz8neneUXT89cw", "user_id"=>"1"}
+  [1m[36mState Load (2.6ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:23:in `create'
+Completed 404 Not Found in 47ms (ActiveRecord: 2.6ms | Allocations: 1578)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find State with 'id'=1):
+  
+app/controllers/states_controller.rb:23:in `create'
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 02:54:17 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"em9g1u_uU6Zwo5XgX-ahf_Wax8bN23ir6o6E3Q3X0dGN2GF2v7Yt-4q3BhuTKTZzeIVZ8aHqXz8neneUXT89cw", "user_id"=>"1"}
+  [1m[36mState Load (1.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+Completed 404 Not Found in 32ms (ActiveRecord: 8.4ms | Allocations: 3826)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find State with 'id'=1):
+  
+app/controllers/states_controller.rb:24:in `create'
+Started GET "/u" for 127.0.0.1 at 2022-01-20 02:54:21 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/u"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-20 02:54:43 +0700
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/users/1/states/new
+Completed 302 Found in 530ms (ActiveRecord: 59.8ms | Allocations: 8895)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:54:44 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (29.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (37.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 283.2ms | Allocations: 8133)
+  Rendered states/new.html.erb within layouts/application (Duration: 310.3ms | Allocations: 8844)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 850.8ms | Allocations: 31309)
+Completed 200 OK in 1203ms (Views: 862.3ms | ActiveRecord: 118.1ms | Allocations: 42832)
+
+
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 02:54:47 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"htWE51xgGnW-7gIVtuPBJ_OnlqclMY3yCbkdkw5RUSJxYoVHDDhkKET6ke56LFYrfrgIkEkAqmbETe7aXrm9gA", "user_id"=>"1"}
+  [1m[36mState Load (1.6ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+Completed 404 Not Found in 39ms (ActiveRecord: 1.6ms | Allocations: 1825)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find State with 'id'=1):
+  
+app/controllers/states_controller.rb:24:in `create'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5031.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rails_starter_project_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (90.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rails_starter_project_development"[0m
+  [1m[35m (16.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rails_starter_project_test"[0m
+  [1m[35m (224.9ms)[0m  [1m[35mCREATE DATABASE "rails_starter_project_development" ENCODING = 'unicode'[0m
+  [1m[35m (178.3ms)[0m  [1m[35mCREATE DATABASE "rails_starter_project_test" ENCODING = 'unicode'[0m
+  [1m[35m (82.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220118200916)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "name" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220118200916"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStates (20220119104342)
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "states" ("id" bigserial primary key, "health" integer, "alcohol" integer, "happy" integer, "tired" integer, "money" integer, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_8773791938"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE INDEX "index_states_on_user_id" ON "states" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220119104342"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateValeraActions (20220119163627)
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "valera_actions" ("id" bigserial primary key, "name" character varying, "health" integer, "alcohol" integer, "happy" integer, "tired" integer, "money" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220119163627"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateConditions (20220119170056)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE "conditions" ("id" bigserial primary key, "attr_name" character varying, "min" integer, "max" integer, "attr_name_eff" character varying, "value_eff" integer, "valera_action_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_300031b3b4"
+FOREIGN KEY ("valera_action_id")
+  REFERENCES "valera_actions" ("id")
+)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_conditions_on_valera_action_id" ON "conditions" ("valera_action_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220119170056"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-19 19:56:32.975400"], ["updated_at", "2022-01-19 19:56:32.975400"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-01-20 02:56:49 +0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 1194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 79.6ms | Allocations: 14421)
+Completed 200 OK in 229ms (Views: 104.8ms | ActiveRecord: 75.9ms | Allocations: 22545)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-01-20 02:56:52 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 84.1ms | Allocations: 3853)
+  Rendered users/new.html.erb within layouts/application (Duration: 95.4ms | Allocations: 4297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 134.6ms | Allocations: 10908)
+Completed 200 OK in 246ms (Views: 156.5ms | ActiveRecord: 20.8ms | Allocations: 15796)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-01-20 02:57:00 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"TDThr_x7Mb_RRJuJD-ggl2fAIfTUURxmpwvmlRNMD4IHLzGK622FunhUK32ZtHQauHuJu20O3pFRtl3PcaQnKw", "user"=>{"email"=>"admin@gmail.com", "name"=>"admin", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "admin@gmail.com"], ["name", "admin"], ["password_digest", "$2a$12$VsxjM9oVmD2XwZ.Y5yXxfu64v2quo1Ix8NRQqZVh7WAKHBaGJKWNO"], ["created_at", "2022-01-19 19:57:00.817110"], ["updated_at", "2022-01-19 19:57:00.817110"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 562ms (ActiveRecord: 5.9ms | Allocations: 4967)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-20 02:57:00 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/users/1/states/new
+Completed 302 Found in 19ms (ActiveRecord: 1.5ms | Allocations: 1059)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:57:00 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (7.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 20.2ms | Allocations: 2693)
+  Rendered states/new.html.erb within layouts/application (Duration: 27.5ms | Allocations: 3150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | Allocations: 9708)
+Completed 200 OK in 140ms (Views: 54.0ms | ActiveRecord: 31.3ms | Allocations: 19629)
+
+
+Started GET "/valera_actions/new" for 127.0.0.1 at 2022-01-20 02:57:05 +0700
+Processing by ValeraActionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering valera_actions/new.html.erb within layouts/application
+  Rendered valera_actions/_form.html.erb (Duration: 38.8ms | Allocations: 2418)
+  Rendered valera_actions/new.html.erb within layouts/application (Duration: 59.7ms | Allocations: 2818)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 140.6ms | Allocations: 9412)
+Completed 200 OK in 278ms (Views: 161.4ms | ActiveRecord: 19.4ms | Allocations: 15851)
+
+
+Started POST "/valera_actions" for 127.0.0.1 at 2022-01-20 02:57:17 +0700
+Processing by ValeraActionsController#create as HTML
+  Parameters: {"authenticity_token"=>"l_n0dyBBybPsLuo3hWsi1fCwO0AA-5Ya9HaBx_I_kK7YeiakAzaX6wus4IVNinydBez9ItzQgozLPTMzqGQ4tA", "valera_action"=>{"name"=>"test", "health"=>"10", "alcohol"=>"0", "happy"=>"0", "tired"=>"0", "money"=>"0"}, "commit"=>"Create Valera action"}
+  [1m[36mTRANSACTION (21.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/valera_actions_controller.rb:57:in `valera_action_save'
+  [1m[36mValeraAction Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "valera_actions" WHERE "valera_actions"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/valera_actions_controller.rb:57:in `valera_action_save'
+  [1m[36mValeraAction Create (25.7ms)[0m  [1m[32mINSERT INTO "valera_actions" ("name", "health", "alcohol", "happy", "tired", "money", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test"], ["health", 10], ["alcohol", 0], ["happy", 0], ["tired", 0], ["money", 0], ["created_at", "2022-01-19 19:57:17.849526"], ["updated_at", "2022-01-19 19:57:17.849526"]]
+  ↳ app/controllers/valera_actions_controller.rb:57:in `valera_action_save'
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/valera_actions_controller.rb:57:in `valera_action_save'
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/users/1/states/new
+Completed 302 Found in 243ms (ActiveRecord: 74.5ms | Allocations: 4994)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 02:57:18 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (4.0ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 24.5ms | Allocations: 959)
+  Rendered states/new.html.erb within layouts/application (Duration: 28.7ms | Allocations: 1068)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | Allocations: 7391)
+Completed 200 OK in 131ms (Views: 86.8ms | ActiveRecord: 6.2ms | Allocations: 9178)
+
+
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 02:57:19 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"XyHKWS5RA7oOfj2Nmf6a2tstzYX5o77pEpK2ybt8LNuolsv5fgl95_RqrnZVMQ3WVjJTspWSmX3fZkWA65TAeQ", "user_id"=>"1"}
+  [1m[36mState Load (9.5ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+Completed 404 Not Found in 54ms (ActiveRecord: 9.5ms | Allocations: 1589)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find State with 'id'=1):
+  
+app/controllers/states_controller.rb:24:in `create'
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:27 +0700
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:29 +0700
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:33 +0700
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:34 +0700
+  [1m[36mState Load (1.4ms)[0m  [1m[34mSELECT "states".* FROM "states" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:39 +0700
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:40 +0700
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:41 +0700
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:48 +0700
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:52 +0700
+Started PUT "/__web_console/repl_sessions/dc0c9b4649b0742e49b8b278522649cd" for 127.0.0.1 at 2022-01-20 02:57:54 +0700
+  [1m[36mState Load (0.9ms)[0m  [1m[34mSELECT "states".* FROM "states" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/categories" for 127.0.0.1 at 2022-01-20 03:08:49 +0700
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/categories"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-20 03:08:52 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/users/1/states/new
+Completed 302 Found in 134ms (ActiveRecord: 21.9ms | Allocations: 8888)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:08:52 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (3.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 139.9ms | Allocations: 7347)
+  Rendered states/new.html.erb within layouts/application (Duration: 149.6ms | Allocations: 7794)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 466.0ms | Allocations: 20885)
+Completed 200 OK in 577ms (Views: 481.9ms | ActiveRecord: 29.0ms | Allocations: 31365)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:08:52 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (17.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 67.3ms | Allocations: 928)
+  Rendered states/new.html.erb within layouts/application (Duration: 72.5ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 114.8ms | Allocations: 7367)
+Completed 200 OK in 189ms (Views: 124.6ms | ActiveRecord: 24.8ms | Allocations: 9281)
+
+
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:08:56 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 3.9ms | Allocations: 3787)
+
+
+  
+NoMethodError (undefined method `states' for #<User id: 1, email: "admin@gmail.com", name: "admin", password_digest: "$2a$12$VsxjM9oVmD2XwZ.Y5yXxfu64v2quo1Ix8NRQqZVh7WA...", created_at: "2022-01-19 19:57:00.817110000 +0000", updated_at: "2022-01-19 19:57:00.817110000 +0000">
+Did you mean?  state
+               state=):
+  
+app/controllers/states_controller.rb:25:in `create'
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:09:19 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (2.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 400 Bad Request in 88ms (ActiveRecord: 30.3ms | Allocations: 10017)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: state
+Did you mean?  user_id
+               controller
+               authenticity_token
+               action):
+  
+app/controllers/states_controller.rb:47:in `state_params'
+app/controllers/states_controller.rb:25:in `create'
+Started PUT "/__web_console/repl_sessions/4d5b5154269e7b2f887bded220fb4931" for 127.0.0.1 at 2022-01-20 03:10:11 +0700
+Started PUT "/__web_console/repl_sessions/4d5b5154269e7b2f887bded220fb4931" for 127.0.0.1 at 2022-01-20 03:10:12 +0700
+Started PUT "/__web_console/repl_sessions/4d5b5154269e7b2f887bded220fb4931" for 127.0.0.1 at 2022-01-20 03:10:14 +0700
+Started PUT "/__web_console/repl_sessions/4d5b5154269e7b2f887bded220fb4931" for 127.0.0.1 at 2022-01-20 03:10:21 +0700
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:10:54 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (1.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 35.8ms | Allocations: 11724)
+
+
+  
+NameError (undefined local variable or method `fstate_params' for #<StatesController:0x0000000000dbb0>
+Did you mean?  state_params):
+  
+app/controllers/states_controller.rb:25:in `create'
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:11:56 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (2.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 400 Bad Request in 136ms (ActiveRecord: 47.6ms | Allocations: 9110)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: state
+Did you mean?  user_id
+               controller
+               authenticity_token
+               action):
+  
+app/controllers/states_controller.rb:47:in `state_params'
+app/controllers/states_controller.rb:25:in `create'
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:12:08 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (2.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 400 Bad Request in 165ms (ActiveRecord: 39.3ms | Allocations: 9127)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: state
+Did you mean?  user_id
+               controller
+               authenticity_token
+               action):
+  
+app/controllers/states_controller.rb:47:in `state_params'
+app/controllers/states_controller.rb:25:in `create'
+Started PUT "/__web_console/repl_sessions/fa6ef85e5c0e814ec8892f502a67659e" for 127.0.0.1 at 2022-01-20 03:12:43 +0700
+Started PUT "/__web_console/repl_sessions/fa6ef85e5c0e814ec8892f502a67659e" for 127.0.0.1 at 2022-01-20 03:12:44 +0700
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:12:47 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (8.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 400 Bad Request in 239ms (ActiveRecord: 64.3ms | Allocations: 9095)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: state
+Did you mean?  user_id
+               controller
+               authenticity_token
+               action):
+  
+app/controllers/states_controller.rb:47:in `state_params'
+app/controllers/states_controller.rb:25:in `create'
+Started PUT "/__web_console/repl_sessions/36461f258629ec2e225b5977d8c9059b" for 127.0.0.1 at 2022-01-20 03:13:23 +0700
+Started PUT "/__web_console/repl_sessions/36461f258629ec2e225b5977d8c9059b" for 127.0.0.1 at 2022-01-20 03:13:23 +0700
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:14:21 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (8.8ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 400 Bad Request in 122ms (ActiveRecord: 40.5ms | Allocations: 9090)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: states
+Did you mean?  user_id
+               controller
+               authenticity_token
+               action):
+  
+app/controllers/states_controller.rb:47:in `state_params'
+app/controllers/states_controller.rb:25:in `create'
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:14:48 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (1.0ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 27.0ms | Allocations: 9528)
+
+
+  
+NoMethodError (undefined method `create' for nil:NilClass):
+  
+app/controllers/states_controller.rb:25:in `create'
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:15:07 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 23.7ms | Allocations: 8061)
+
+
+  
+NoMethodError (undefined method `states' for #<User id: 1, email: "admin@gmail.com", name: "admin", password_digest: "$2a$12$VsxjM9oVmD2XwZ.Y5yXxfu64v2quo1Ix8NRQqZVh7WA...", created_at: "2022-01-19 19:57:00.817110000 +0000", updated_at: "2022-01-19 19:57:00.817110000 +0000">
+Did you mean?  state
+               state=):
+  
+app/controllers/states_controller.rb:25:in `create'
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:15:23 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (1.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 42.5ms | Allocations: 9526)
+
+
+  
+NoMethodError (undefined method `create' for nil:NilClass):
+  
+app/controllers/states_controller.rb:25:in `create'
+Started PUT "/__web_console/repl_sessions/b1e23b1917b0af250ae0b506c0b02214" for 127.0.0.1 at 2022-01-20 03:15:35 +0700
+Started PUT "/__web_console/repl_sessions/b1e23b1917b0af250ae0b506c0b02214" for 127.0.0.1 at 2022-01-20 03:15:36 +0700
+Started PUT "/__web_console/repl_sessions/b1e23b1917b0af250ae0b506c0b02214" for 127.0.0.1 at 2022-01-20 03:15:39 +0700
+Started PUT "/__web_console/repl_sessions/b1e23b1917b0af250ae0b506c0b02214" for 127.0.0.1 at 2022-01-20 03:15:39 +0700
+Started POST "/users/1/states" for 127.0.0.1 at 2022-01-20 03:17:04 +0700
+Processing by StatesController#create as HTML
+  Parameters: {"authenticity_token"=>"fl4GwgcvzSQsXJg6N1mg64I5W5mdgClNKro4HkXhXcyJ6QdiV3ezedZIC8H7ljfnDybFrvGxDtnnTstXFQmxbg", "user_id"=>"1"}
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:24:in `create'
+  [1m[36mState Load (14.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 26.7ms | Allocations: 2509)
+
+
+  
+NoMethodError (undefined method `create' for nil:NilClass):
+  
+app/controllers/states_controller.rb:25:in `create'
+Started GET "/users/1/" for 127.0.0.1 at 2022-01-20 03:17:11 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController
+Did you mean?  new
+               create):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-01-20 03:17:19 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/users/1/states/new
+Completed 302 Found in 65ms (ActiveRecord: 9.5ms | Allocations: 1378)
+
+
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:17:19 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (5.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 147.0ms | Allocations: 11004)
+  Rendered states/new.html.erb within layouts/application (Duration: 158.2ms | Allocations: 11447)
+  Rendered layout layouts/application.html.erb (Duration: 168.5ms | Allocations: 11521)
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 21.8ms | Allocations: 18469)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `edit_user_states_path' for #<ActionView::Base:0x0000000001d7b8>
+Did you mean?  edit_user_state_path
+               edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_states_path, method: 'edit' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:17:33 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (16.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (3.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 22.3ms | Allocations: 2323)
+  Rendered states/new.html.erb within layouts/application (Duration: 31.7ms | Allocations: 2755)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 2829)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 20.4ms | Allocations: 5542)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path, method: 'edit' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:17:52 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (2.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 23.8ms | Allocations: 2291)
+  Rendered states/new.html.erb within layouts/application (Duration: 49.4ms | Allocations: 2724)
+  Rendered layout layouts/application.html.erb (Duration: 69.8ms | Allocations: 2798)
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 16.7ms | Allocations: 5505)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path, method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:18:05 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (4.7ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 47.5ms | Allocations: 2291)
+  Rendered states/new.html.erb within layouts/application (Duration: 61.8ms | Allocations: 2723)
+  Rendered layout layouts/application.html.erb (Duration: 73.4ms | Allocations: 2797)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 9.4ms | Allocations: 5504)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_path):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_url, method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:18:11 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (22.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 80.8ms | Allocations: 2291)
+  Rendered states/new.html.erb within layouts/application (Duration: 94.4ms | Allocations: 2723)
+  Rendered layout layouts/application.html.erb (Duration: 106.1ms | Allocations: 2797)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 29.6ms | Allocations: 5507)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path, method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:18:32 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (9.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 36.1ms | Allocations: 2291)
+  Rendered states/new.html.erb within layouts/application (Duration: 42.8ms | Allocations: 2723)
+  Rendered layout layouts/application.html.erb (Duration: 50.7ms | Allocations: 2797)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 21.4ms | Allocations: 5504)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [edit_user_state_path, @user.id], method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:18:55 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:13:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (12.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 63.3ms | Allocations: 2291)
+  Rendered states/new.html.erb within layouts/application (Duration: 81.6ms | Allocations: 2723)
+  Rendered layout layouts/application.html.erb (Duration: 102.3ms | Allocations: 2797)
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 25.0ms | Allocations: 5504)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [edit_user_state_path, @state.id], method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:20:37 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 28.8ms | Allocations: 7752)
+  Rendered states/new.html.erb within layouts/application (Duration: 34.3ms | Allocations: 7882)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 7956)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 21.2ms | Allocations: 20308)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, [edit_user_state_path, @state.id], method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:21:05 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (4.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 31.9ms | Allocations: 2291)
+  Rendered states/new.html.erb within layouts/application (Duration: 44.0ms | Allocations: 2723)
+  Rendered layout layouts/application.html.erb (Duration: 52.4ms | Allocations: 2797)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 5.4ms | Allocations: 5505)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>"1"}, missing required keys: [:id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path, method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
+Started GET "/users/1/states/new" for 127.0.0.1 at 2022-01-20 03:23:56 +0700
+Processing by StatesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.html.erb within layouts/application
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_index.html.erb:1
+  Rendered valera_actions/_index.html.erb (Duration: 11.8ms | Allocations: 2340)
+  Rendered states/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2774)
+  Rendered layout layouts/application.html.erb (Duration: 42.0ms | Allocations: 2848)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 10.7ms | Allocations: 5555)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"states", :user_id=>#<State id: nil, health: 100, alcohol: 0, happy: 0, tired: 0, money: 300, user_id: nil, created_at: nil, updated_at: nil>}, missing required keys: [:id], possible unmatched constraints: [:user_id]
+Did you mean?  edit_user_state_url):
+    1: <% ValeraAction.all.each do |valera_action| %>
+    2:     <%= button_to valera_action.name, edit_user_state_path(@state), method: 'update' %>
+    3:   <% end %>
+    4: <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
+    5: 
+  
+app/views/valera_actions/_index.html.erb:2
+app/views/valera_actions/_index.html.erb:1
+app/views/states/new.html.erb:15
