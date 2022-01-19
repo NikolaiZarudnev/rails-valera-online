@@ -1,0 +1,16 @@
+
+<% if user_signed_in?() %>
+  <div class="titlePage" id="titleCategory">WELCOME, <%= current_user.name %></div><br>
+  <div class="logButtons">
+    <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
+
+    <%= link_to 'Start', new_user_state_path%>
+
+  </div>
+<% else %>
+    <p class="titlePage" id="titleCategory">WELCOME</p><br>
+    <div class="logButtons">
+      <%= link_to 'SIGN UP', new_user_path, class: "linkCategorie" %>
+      <%= link_to 'LOG IN', new_session_path, class: "linkCategorie" %>
+    </div>
+<% end %>
