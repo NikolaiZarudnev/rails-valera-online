@@ -6,9 +6,7 @@ Rails.application.routes.draw do
     resources :conditions
   end
   resource :session
-  resources :users do
-    resources :states
-  end
+  resources :users
 
   root 'home#index'
 end

@@ -1,4 +1,4 @@
-<%= form_with model: @valera_action, local: true do |form| %>
+<%= form_with model: [@valera_action], local: true do |form| %>
  
   <% if @valera_action.errors.any? %>
     <div id="error_explanation">
@@ -18,6 +18,8 @@
     <p>
       <%= form.label :name %>
       <%= form.text_field :name, class: "editTextField" %>
+    </p>
+    <p>
     </p>
     <p>
       <%= form.label :health %>

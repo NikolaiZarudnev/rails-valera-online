@@ -5,5 +5,4 @@ class ValeraAction < ApplicationRecord
     validates :happy, presence: true
     validates :tired, presence: true
     validates :money, presence: true
-    has_many :conditions
 end

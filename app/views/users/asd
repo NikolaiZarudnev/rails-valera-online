@@ -14,3 +14,22 @@
       <strong>Actions:</strong>
         <%= render 'valera_actions/index'%><br><br>
 </p>
+
+<%= form_with model: @user, local: true do |form| %>
+    <% params = {
+      user: {
+        id: current_user.id,
+        email: current_user.email,
+        name: current_user.name,
+        password:  current_user.password,
+        password_confirmation: current_user.password_confirmation,
+        health: current_user.health + valera_action.health,
+        alcohol: current_user.alcohol + valera_action.alcohol,
+        happy: current_user.happy + valera_action.happy,
+        tired: current_user.tired + valera_action.tired,
+        money: current_user.money + valera_action.money
+      }
+    } %>
+    
+    
+  <% end %>
