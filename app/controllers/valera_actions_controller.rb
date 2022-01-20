@@ -17,7 +17,7 @@ class ValeraActionsController < ApplicationController
         if user_signed_in?
           @valera_action = ValeraAction.find(params[:id])
         else
-          redirect_to new_user_state_path(current_user)
+          redirect_to user_path(current_user)
         end
       end
     
@@ -26,7 +26,7 @@ class ValeraActionsController < ApplicationController
           @valera_action = ValeraAction.new(valera_action_params)
           valera_action_save
         #else
-        #  redirect_to new_user_state_path(current_user)
+        #  redirect_to user_path(current_user)
         #end
       end
     
@@ -35,7 +35,7 @@ class ValeraActionsController < ApplicationController
           @valera_action = ValeraAction.find(params[:id])
           valera_action_update
         else
-          redirect_to new_user_state_path(current_user)
+          redirect_to user_path(current_user)
         end
       end
     
@@ -44,7 +44,7 @@ class ValeraActionsController < ApplicationController
           @valera_action = ValeraAction.find(params[:id])
           @valera_action.destroy
         end
-        redirect_to new_user_state_path(current_user)
+        redirect_to user_path(current_user)
       end
     
       private
@@ -55,7 +55,7 @@ class ValeraActionsController < ApplicationController
     
       def valera_action_save
         if @valera_action.save
-          redirect_to new_user_state_path(current_user)
+          redirect_to user_path(current_user)
         else
           render 'new'
         end
@@ -63,7 +63,7 @@ class ValeraActionsController < ApplicationController
     
       def valera_action_update
         if @valera_action.update(valera_action_params)
-          redirect_to new_user_state_path(current_user)
+          redirect_to user_path(current_user)
         else
           render 'edit'
         end
