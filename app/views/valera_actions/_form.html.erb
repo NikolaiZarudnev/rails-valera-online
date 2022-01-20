@@ -19,10 +19,16 @@
       <%= form.label :name %>
       <%= form.text_field :name, class: "editTextField" %>
     </p>
-    <%= fields_for :condition, @valera_action.conditions do |condition_fields| %>
-      <%= condition_fields.text_field :attr_name %>
+    <%#= button_to "Add", new_valera_action_%>
+    <%= form.fields_for :condition do |cond_form| %>
+      <%= cond_form.label :attr_name %>
+      <%= cond_form.text_field :attr_name, class: "editTextField" %>
+      <%= cond_form.label :min %>
+      <%= cond_form.text_field :min, class: "editTextField" %>
+      <%= cond_form.label :max %>
+      <%= cond_form.text_field :max, class: "editTextField" %>
     <% end %>
-    <%#= link_to "#{@valera_action.name} condition", new_valera_actions_condition_path(@valera_action, @valera_action.conditions.build)%>
+
     <p>
       <%= form.label :health %>
       <%= form.text_field :health, class: "editTextField" %>

@@ -6,4 +6,6 @@ class ValeraAction < ApplicationRecord
     validates :tired, presence: true
     validates :money, presence: true
     has_many :conditions
+
+    accepts_nested_attributes_for :conditions
 end

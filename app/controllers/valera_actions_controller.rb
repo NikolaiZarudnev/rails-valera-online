@@ -8,9 +8,8 @@ class ValeraActionsController < ApplicationController
     end
     
     def new
-    
       @valera_action = ValeraAction.new
-      @condition = Condition.new
+      @valera_action.conditions.build
     end
     
       def edit
@@ -24,7 +23,7 @@ class ValeraActionsController < ApplicationController
       def create
         #if user_signed_in?
           @valera_action = ValeraAction.new(valera_action_params)
-          @condition = @valera_action.conditions.create(condition_params)
+          ###@condition = @valera_action.conditions.create(condition_params)
           valera_action_save
         #else
         #  redirect_to user_path(current_user)
@@ -53,9 +52,9 @@ class ValeraActionsController < ApplicationController
       private
     
       def valera_action_params
-        params.require(:valera_action).permit(:name, :health, :alcohol, :happy, :tired, :money)
+        params.require(:valera_action).permit(:name, :health, :alcohol, :happy, :tired, :money, condition: [])
       end
-      
+  
       def condition_params
         params.require(:condition).permit!
       end
