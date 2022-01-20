@@ -1,0 +1,35 @@
+<%= form_with model: @condirion, local: true do |form| %>
+ 
+  <% if @condirion.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@condirion.errors.count, "error") %> prohibited
+        this condirion from being saved:
+      </h2>
+      <ul>
+        <% @condirion.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="editForm">
+    <p>
+      <%= form.label :attr_name %>
+      <%= form.text_field :attr_name, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :min %>
+      <%= form.text_field :min, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :max %>
+      <%= form.text_field :max, class: "editTextField" %>
+    </p>
+  </div>
+
+  <%= form.submit class: "submitForm" %>
+
+ 
+<% end %>

@@ -19,26 +19,35 @@
       <%= form.label :name %>
       <%= form.text_field :name, class: "editTextField" %>
     </p>
+    <%= fields_for :condition, @valera_action.conditions do |condition_fields| %>
+      <%= condition_fields.text_field :attr_name %>
+    <% end %>
+    <%#= link_to "#{@valera_action.name} condition", new_valera_actions_condition_path(@valera_action, @valera_action.conditions.build)%>
     <p>
       <%= form.label :health %>
       <%= form.text_field :health, class: "editTextField" %>
     </p>
+    <%#= render 'conditions/form_attr'%>
     <p>
       <%= form.label :alcohol %>
       <%= form.text_field :alcohol, class: "editTextField" %>
     </p>
+    <%#= render 'conditions/form_attr'%>
     <p>
       <%= form.label :happy %>
       <%= form.text_field :happy, class: "editTextField" %>
     </p>
+    <%#= render 'conditions/form_attr'%>
     <p>
       <%= form.label :tired %>
       <%= form.text_field :tired, class: "editTextField" %>
     </p>
+    <%#= render 'conditions/form_attr'%>
     <p>
       <%= form.label :money %>
       <%= form.text_field :money, class: "editTextField" %>
     </p>
+    <%#= render 'conditions/form_attr'%>
   </div>
 
   <%= form.submit class: "submitForm" %>
