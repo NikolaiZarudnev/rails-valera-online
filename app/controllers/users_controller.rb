@@ -53,12 +53,29 @@ class UsersController < ApplicationController
     end
   
     def user_update
-      asd = params[:user].permit!
-      asd["health"] = asd["health"].to_i + @user.health#todo helper
-      if @user.update(asd)
-        redirect_to @user
+      #redirectv_to
+      action_effect = params[:user].permit!
+      asd = action_effect["conditions"]["cond"]
+      
+      redirectv_to
+      if @user.update(stats_update action_effect)
+        redirectv_to @user
       else
         render 'edit'
       end
+    end
+
+    def stats_update(action_effect)
+      conds_check action_effect
+      action_effect["health"] = action_effect["health"].to_i + @user.health
+      action_effect["alcohol"] = action_effect["alcohol"].to_i + @user.alcohol
+      action_effect["happy"] = action_effect["happy"].to_i + @user.happy
+      action_effect["tired"] = action_effect["tired"].to_i + @user.tired
+      action_effect["money"] = action_effect["money"].to_i + @user.money
+      action_effect
+    end
+
+    def conds_check(action_effect)
+
     end
 end

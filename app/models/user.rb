@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :happy, numericality: { only_integer: true }
   validates :tired, numericality: { only_integer: true }
   validates :money, numericality: { only_integer: true }
+
 end

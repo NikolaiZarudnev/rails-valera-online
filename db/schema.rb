@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_170056) do
+ActiveRecord::Schema.define(version: 2022_01_19_202940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,25 +27,17 @@ ActiveRecord::Schema.define(version: 2022_01_19_170056) do
     t.index ["valera_action_id"], name: "index_conditions_on_valera_action_id"
   end
 
-  create_table "states", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "name"
+    t.string "password_digest"
     t.integer "health"
     t.integer "alcohol"
     t.integer "happy"
     t.integer "tired"
     t.integer "money"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_states_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "name"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "valera_actions", force: :cascade do |t|
@@ -60,5 +52,4 @@ ActiveRecord::Schema.define(version: 2022_01_19_170056) do
   end
 
   add_foreign_key "conditions", "valera_actions"
-  add_foreign_key "states", "users"
 end

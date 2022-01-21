@@ -1,7 +1,31 @@
+<div class="titlePage", style="color:white; text-shadow: 0 0 8px #ffbcb5;">Список категорий</div>
 
 <div class="listCategories">
-  
-  <%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
-  
-  
+  <%= link_to 'Add action', new_valera_action_path, class: "categorieOptions" if user_signed_in?() %>
+  <% ValeraAction.all.each do |valera_action| %>
+    <% valera_action.conditions.each do |cond| %>
+      <%= cond.attr_name%>
+    <%end%>
+    <%= form_with(model: @user, method: "patch") do |f| %>
+      <%= f.hidden_field :health, value: valera_action.health %>
+      <%= f.hidden_field :alcohol, value: valera_action.alcohol %>
+      <%= f.hidden_field :happy, value: valera_action.happy %>
+      <%= f.hidden_field :tired, value: valera_action.tired %>
+      <%= f.hidden_field :money, value: valera_action.money %>
+      <%#= f.hidden_field :conditions, value: valera_action.conditions %>
+      <% valera_action.conditions.each do |cond| %>
+        <%= f.fields_for :conditions, cond do |condition_form| %>
+          <%= condition_form.hidden_field :attr_name, value: cond.attr_name %>
+        <% end %>
+      <% end %>
+      <%= f.submit valera_action.name%>
+    <% end %>
+    
+    <%= link_to 'Show', valera_action_path(valera_action), class: "categorieOptions" if user_signed_in?()%>
+    <%= link_to 'Edit', edit_valera_action_path(valera_action), class: "categorieOptions" if user_signed_in?()%>
+    <%=  link_to 'Delete', valera_action_path(valera_action), class: "categorieOptions",
+                method: :delete,
+                data: { confirm: 'Are you sure?' } if user_signed_in?()%>
+  <% end %>
 </div>
+

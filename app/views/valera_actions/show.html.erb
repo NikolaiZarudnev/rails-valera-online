@@ -1,2 +1,10 @@
 <div class="titlePage" id="titleCategory"> <%= @valera_action.name %> </div>
 
+
+<div class="listCards">
+  <%= render @valera_action.conditions %>
+</div>
+
+<%= link_to "Add", new_valera_action_condition_path(@valera_action, @valera_action.conditions.build),
+    class: "topBarLink", id: "addLink" if user_signed_in?() %>
+<%= link_to "Back", user_path(current_user), class: "topBarLink", id: "backLink" %>

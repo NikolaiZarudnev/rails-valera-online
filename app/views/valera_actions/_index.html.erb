@@ -1,12 +1,2 @@
-<% ValeraAction.all.each do |valera_action| %>
-  <%= form_with(model: @user, method: "patch") do |f| %>
-    
-    <%= f.hidden_field :health, value: valera_action.health %>
-    <%= f.submit valera_action.name%>
-  <% end %>
-  
-<% end %>
-<%= link_to 'Добавить категорию', new_valera_actions_path, class: "categorieOptions" %>
 
-
-<%#= render 'valera_actions/list' %>
+<%= render 'valera_actions/list' %>
