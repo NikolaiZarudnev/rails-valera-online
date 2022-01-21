@@ -1,4 +1,6 @@
+<%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
 
+<%= render 'new_game' %>
 <p>
       <strong>Health:</strong>
       <%= @user.health%>/100<br><br>
@@ -11,6 +13,13 @@
       <strong>Money:</strong>
       <%= @user.money%>$<br><br>
 
-      <strong>Actions:</strong>
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-info">
+          <%= msg %>
+          <%= render 'new_game' if msg == "You died."%>
+        </div>
+      <% end %>
+
+      
         <%= render 'valera_actions/index'%><br><br>
 </p>
