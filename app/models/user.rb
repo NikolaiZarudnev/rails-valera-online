@@ -10,8 +10,6 @@ class User < ApplicationRecord
   validates :tired, numericality: { only_integer: true }
   validates :money, numericality: { only_integer: true }
 
-  has_many :valera_actions
   has_one :stats_record
 
-  accepts_nested_attributes_for :valera_actions
 end

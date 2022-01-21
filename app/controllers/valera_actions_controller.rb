@@ -20,12 +20,12 @@ class ValeraActionsController < ApplicationController
   end
 
   def create
-    # if user_signed_in?
-    @valera_action = ValeraAction.new(valera_action_params)
-    valera_action_save
-    # else
-    #  redirect_to user_path(current_user)
-    # end
+    if user_signed_in?
+      @valera_action = ValeraAction.new(valera_action_params)
+      valera_action_save
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def update
