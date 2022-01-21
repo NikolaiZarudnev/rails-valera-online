@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   def user_save
     if @user.save
       log_in @user
+      save_max_stat
       redirect_to @user
     else
       render 'new'
@@ -64,7 +65,7 @@ class UsersController < ApplicationController
     else
       flash.notice = "You cannot do it."
     end
-    redirect_to @user
+    user_save
   end
 
   def stats_update(action_effect)
@@ -147,10 +148,7 @@ class UsersController < ApplicationController
       @stats_record = StatsRecord.find(@user.id)
       @stats_record.money = [@stats_record.money, @user.money].max
     else
-      @stats_record = StatsRecord.new
-      @stats_record.id = @user.id
-      @stats_record.name = @user.name
-      @stats_record.money = @user.money
+      @stats_record = StatsRecord.create(id: @user.id, name: @user.name, money: @user.money)
     end
     @stats_record.save!
   end

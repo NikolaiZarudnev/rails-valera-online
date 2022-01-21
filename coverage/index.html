@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-21T23:25:32+07:00">2022-01-21T23:25:32+07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-22T04:02:51+07:00">2022-01-22T04:02:51+07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>88</b> relevant lines,
-    <span class="green"><b>88</b> lines covered</span> and
+    <b>85</b> relevant lines,
+    <span class="green"><b>85</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -183,9 +183,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#2e9870527fef0cdfe3728f4b3bd450181a239b95" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">12</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">10</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -194,9 +194,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#f291b67f50d95ae30550ac46374c6020e559b589" class="src_link" title="app/models/valera_action.rb">app/models/valera_action.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
             <td class="cell--number">10</td>
-            <td class="cell--number">10</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">9</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -359,7 +359,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b687336cbc462af1a8e0b7a1d5dcdf5cd7c67bb7" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">18</td>
+            <td class="cell--number">13</td>
             <td class="cell--number">9</td>
             <td class="cell--number">9</td>
             <td class="cell--number">0</td>
@@ -950,8 +950,8 @@
     
 
     <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
+      <b>10</b> relevant lines.
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1101,23 +1101,12 @@
 
             
 
-            <code class="ruby">  has_many :valera_actions</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">  has_one :stats_record</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -1128,18 +1117,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  accepts_nested_attributes_for :valera_actions</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -1168,8 +1146,8 @@
     
 
     <div class="t-line-summary">
-      <b>10</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>9</b> relevant lines.
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1198,7 +1176,7 @@
 
             
 
-            <code class="ruby">  belongs_to :user</code>
+            <code class="ruby">  validates :name, presence: true, uniqueness: true</code>
           </li>
         </div>
       
@@ -1209,7 +1187,7 @@
 
             
 
-            <code class="ruby">  validates :name, presence: true, uniqueness: true</code>
+            <code class="ruby">  validates :health, presence: true</code>
           </li>
         </div>
       
@@ -1220,7 +1198,7 @@
 
             
 
-            <code class="ruby">  validates :health, presence: true</code>
+            <code class="ruby">  validates :alcohol, presence: true</code>
           </li>
         </div>
       
@@ -1231,7 +1209,7 @@
 
             
 
-            <code class="ruby">  validates :alcohol, presence: true</code>
+            <code class="ruby">  validates :happy, presence: true</code>
           </li>
         </div>
       
@@ -1242,7 +1220,7 @@
 
             
 
-            <code class="ruby">  validates :happy, presence: true</code>
+            <code class="ruby">  validates :tired, presence: true</code>
           </li>
         </div>
       
@@ -1253,7 +1231,7 @@
 
             
 
-            <code class="ruby">  validates :tired, presence: true</code>
+            <code class="ruby">  validates :money, presence: true</code>
           </li>
         </div>
       
@@ -1264,7 +1242,7 @@
 
             
 
-            <code class="ruby">  validates :money, presence: true</code>
+            <code class="ruby">  has_many :conditions, dependent: :destroy</code>
           </li>
         </div>
       
@@ -1275,23 +1253,12 @@
 
             
 
-            <code class="ruby">  has_many :conditions, dependent: :destroy</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">  accepts_nested_attributes_for :conditions</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -4077,18 +4044,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
-            
-
-            <code class="ruby">  # get &#39;valera_actions/index&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="4">
             <span class="hits">1</span>
             
 
@@ -4099,7 +4055,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
+          <li class="covered" data-hits="1" data-linenumber="5">
             <span class="hits">1</span>
             
 
@@ -4110,7 +4066,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
@@ -4121,18 +4077,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
+          <li class="covered" data-hits="1" data-linenumber="7">
             <span class="hits">1</span>
             
 
@@ -4143,40 +4088,29 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  resources :valera_actions</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  resources :users</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  resources :users do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    resources :valera_actions</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
@@ -4187,40 +4121,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
             
 
-            <code class="ruby">  # resource :user do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">  #  resource :stats_record</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">  # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
+          <li class="covered" data-hits="1" data-linenumber="12">
             <span class="hits">1</span>
             
 
@@ -4231,7 +4143,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
