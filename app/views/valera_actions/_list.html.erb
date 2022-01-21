@@ -1,6 +1,6 @@
 
-<div class="listCategories">
-  <%= link_to 'Add action', new_valera_action_path, class: "categorieOptions" if user_signed_in?() %>
+<div class="">
+  <%= link_to 'Add action', new_valera_action_path, class: "" if user_signed_in?() %>
   <% ValeraAction.all.each do |valera_action| %>
     <%= form_with(model: @user, method: "patch") do |f| %>
       <% if @user.errors.any? %>
@@ -26,9 +26,9 @@
       
     <% end %>
     
-    <%= link_to 'Show', valera_action_path(valera_action), class: "categorieOptions" if user_signed_in?()%>
-    <%= link_to 'Edit', edit_valera_action_path(valera_action), class: "categorieOptions" if user_signed_in?()%>
-    <%=  link_to 'Delete', valera_action_path(valera_action), class: "categorieOptions",
+    <%= link_to 'Show', valera_action_path(valera_action), class: "" if user_signed_in?()%>
+    <%= link_to 'Edit', edit_valera_action_path(valera_action), class: "" if user_signed_in?()%>
+    <%=  link_to 'Delete', valera_action_path(valera_action), class: "",
                 method: :delete,
                 data: { confirm: 'Are you sure?' } if user_signed_in?()%>
   <% end %>
