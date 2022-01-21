@@ -12,12 +12,13 @@
       <%= f.hidden_field :happy, value: valera_action.happy %>
       <%= f.hidden_field :tired, value: valera_action.tired %>
       <%= f.hidden_field :money, value: valera_action.money %>
-      <%#= f.hidden_field :conditions, value: valera_action.conditions %>
-      <% valera_action.conditions.each do |cond| %>
-        <%= f.fields_for :conditions, cond do |condition_form| %>
-          <%= condition_form.hidden_field :attr_name, value: cond.attr_name %>
-        <% end %>
-      <% end %>
+      <%= f.hidden_field :conditions, value: valera_action.conditions.as_json %>
+      <%# valera_action.conditions.each do |cond| %>
+        <%#= f.fields_for :conditions, valera_action.conditions do |condition_form| %>
+          <%# valera_action.conditions.each do |cond| %>
+            <%#= condition_form.hidden_field :attr_name, value: cond.attr_name %>
+          <%# end %>
+        <%# end %>
       <%= f.submit valera_action.name%>
     <% end %>
     

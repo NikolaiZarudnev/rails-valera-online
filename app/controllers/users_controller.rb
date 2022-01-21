@@ -55,8 +55,12 @@ class UsersController < ApplicationController
     def user_update
       #redirectv_to
       action_effect = params[:user].permit!
-      asd = action_effect["conditions"]["cond"]
-      
+      asd = action_effect["conditions"]
+      #qwe = {"id":5, "attr_name":"tired", "min":0, "max":10, "attr_name_eff":"health", "value_eff":0, "valera_action_id":2, "created_at":"2022-01-20T22:48:22.699Z", "updated_at":"2022-01-20T22:48:22.699Z"}
+      asdcond = "\"conds\"[" + asd + "]"
+      qwe = asdcond.gsub('\"', '"').gsub('} {', '}, {').gsub('=>', ": ")
+      "{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"
+      eee = JSON.parse('{"cond": {"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, "cond": {"id": 6}}')
       redirectv_to
       if @user.update(stats_update action_effect)
         redirectv_to @user

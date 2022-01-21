@@ -12551,3 +12551,1163 @@ Did you mean?  redirect_to):
   
 app/controllers/users_controller.rb:60:in `user_update'
 app/controllers/users_controller.rb:36:in `update'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 08:29:51 +0700
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"NTHeQZR_OyzEh1TWPQ33lSldM3LlwoPYH9aW9jY5sCA26s6h8BOxowG3sN7NlMjxeBFEJHW3b0w1RZtRAI9E9Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>{"attr_name"=>"tired"}}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 15.8ms | Allocations: 15644)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000008b38>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 08:30:06 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (2.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (3.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (3.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (5.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (5.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 4]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (3.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 5]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (6.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 6]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 7]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 8]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 315.0ms | Allocations: 29661)
+  Rendered valera_actions/_index.html.erb (Duration: 320.1ms | Allocations: 29967)
+  Rendered users/show.html.erb within layouts/application (Duration: 325.8ms | Allocations: 30424)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 400.2ms | Allocations: 43486)
+Completed 200 OK in 438ms (Views: 358.5ms | ActiveRecord: 51.9ms | Allocations: 46281)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 08:30:09 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"aC8Q51RIjZge0Vr_fInifq1bOohXdy7dDcJRNFvz4zBr9AAHMCQHF9vhvveMEN0a_BdN3scCwkknUVyTbUUX5Q", "user"=>{"health"=>"0", "alcohol"=>"-50", "happy"=>"0", "tired"=>"-70", "money"=>"0", "conditions"=>{"attr_name"=>"alcohol"}}, "commit"=>"Sleep", "id"=>"1"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 9.2ms | Allocations: 4685)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000009448>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 08:32:09 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (2.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (1.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 66.4ms | Allocations: 6968)
+  Rendered valera_actions/_index.html.erb (Duration: 73.2ms | Allocations: 7271)
+  Rendered users/show.html.erb within layouts/application (Duration: 77.8ms | Allocations: 7702)
+  Rendered layout layouts/application.html.erb (Duration: 88.1ms | Allocations: 7776)
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 11.9ms | Allocations: 9767)
+
+
+  
+ActionView::Template::Error (undefined method `to_hash' for #<ActiveRecord::Associations::CollectionProxy [#<Condition id: 1, attr_name: "health", min: 5, max: 35, attr_name_eff: "health", value_eff: 15, valera_action_id: 1, created_at: "2022-01-20 21:49:33.908526000 +0000", updated_at: "2022-01-20 21:49:33.908526000 +0000">, #<Condition id: 2, attr_name: "health", min: 5, max: 35, attr_name_eff: "health", value_eff: 18, valera_action_id: 1, created_at: "2022-01-20 21:52:35.184976000 +0000", updated_at: "2022-01-20 21:56:36.157170000 +0000">]>
+Did you mean?  to_h):
+    12:       <%= f.hidden_field :happy, value: valera_action.happy %>
+    13:       <%= f.hidden_field :tired, value: valera_action.tired %>
+    14:       <%= f.hidden_field :money, value: valera_action.money %>
+    15:       <%= f.hidden_field :conditions, value: valera_action.conditions.to_hash %>
+    16:       <%# valera_action.conditions.each do |cond| %>
+    17:         <%= f.fields_for :conditions, valera_action.conditions do |condition_form| %>
+    18:           <% valera_action.conditions.each do |cond| %>
+  
+app/views/valera_actions/_list.html.erb:15
+app/views/valera_actions/_list.html.erb:9
+app/views/valera_actions/_list.html.erb:5
+app/views/valera_actions/_index.html.erb:2
+app/views/users/show.html.erb:15
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 08:32:23 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.6ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (1.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 50.5ms | Allocations: 4814)
+  Rendered valera_actions/_index.html.erb (Duration: 55.7ms | Allocations: 5115)
+  Rendered users/show.html.erb within layouts/application (Duration: 60.2ms | Allocations: 5546)
+  Rendered layout layouts/application.html.erb (Duration: 71.7ms | Allocations: 5621)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 10.7ms | Allocations: 7692)
+
+
+  
+ActionView::Template::Error (wrong element type Condition (expected array)):
+    12:       <%= f.hidden_field :happy, value: valera_action.happy %>
+    13:       <%= f.hidden_field :tired, value: valera_action.tired %>
+    14:       <%= f.hidden_field :money, value: valera_action.money %>
+    15:       <%= f.hidden_field :conditions, value: valera_action.conditions.to_h %>
+    16:       <%# valera_action.conditions.each do |cond| %>
+    17:         <%= f.fields_for :conditions, valera_action.conditions do |condition_form| %>
+    18:           <% valera_action.conditions.each do |cond| %>
+  
+app/views/valera_actions/_list.html.erb:15:in `to_h'
+app/views/valera_actions/_list.html.erb:15
+app/views/valera_actions/_list.html.erb:9
+app/views/valera_actions/_list.html.erb:5
+app/views/valera_actions/_index.html.erb:2
+app/views/users/show.html.erb:15
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 08:33:33 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (14.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (6.8ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (1.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 4]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 5]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 6]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.2ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 7]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 8]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 62.5ms | Allocations: 14242)
+  Rendered valera_actions/_index.html.erb (Duration: 63.1ms | Allocations: 14542)
+  Rendered users/show.html.erb within layouts/application (Duration: 64.3ms | Allocations: 14972)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.1ms | Allocations: 21739)
+Completed 200 OK in 110ms (Views: 70.2ms | ActiveRecord: 33.2ms | Allocations: 23853)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2022-01-21 08:33:36 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users/1" for 127.0.0.1 at 2022-01-21 08:35:07 +0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 08:35:10 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (7.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (4.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (5.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (3.9ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 4]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (5.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 5]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (9.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 6]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 7]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (16.9ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 8]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 549.7ms | Allocations: 30477)
+  Rendered valera_actions/_index.html.erb (Duration: 581.6ms | Allocations: 30784)
+  Rendered users/show.html.erb within layouts/application (Duration: 588.2ms | Allocations: 31246)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 677.5ms | Allocations: 44307)
+Completed 200 OK in 786ms (Views: 597.4ms | ActiveRecord: 110.1ms | Allocations: 56348)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 08:35:13 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"TxMO5rU7sQqXsAUQ5LrYgC11339s769ybcziglJaZE9MyB4G0Vc7hVKA4RgUI-fkfDmoKfyaQ-ZHX-8lZOyQmg", "user"=>{"health"=>"0", "alcohol"=>"-50", "happy"=>"0", "tired"=>"-70", "money"=>"0", "conditions"=>"{\"id\"=>7, \"attr_name\"=>\"alcohol\", \"min\"=>70, \"max\"=>100, \"attr_name_eff\"=>\"happy\", \"value_eff\"=>-3, \"valera_action_id\"=>8, \"created_at\"=>\"2022-01-20T22:56:01.936Z\", \"updated_at\"=>\"2022-01-20T22:56:01.936Z\"} {\"id\"=>8, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>30, \"attr_name_eff\"=>\"health\", \"value_eff\"=>90, \"valera_action_id\"=>8, \"created_at\"=>\"2022-01-20T22:56:32.739Z\", \"updated_at\"=>\"2022-01-20T22:56:32.739Z\"}"}, "commit"=>"Sleep", "id"=>"1"}
+  [1m[36mUser Load (12.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 13.7ms | Allocations: 4788)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000009380>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 08:35:49 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.8ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (5.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (9.9ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (3.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (13.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 4]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (3.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 5]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (10.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 6]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (11.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 7]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (7.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 8]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 230.7ms | Allocations: 12962)
+  Rendered valera_actions/_index.html.erb (Duration: 239.4ms | Allocations: 13058)
+  Rendered users/show.html.erb within layouts/application (Duration: 242.6ms | Allocations: 13166)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 280.8ms | Allocations: 19553)
+Completed 200 OK in 338ms (Views: 236.4ms | ActiveRecord: 74.3ms | Allocations: 20735)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 08:56:41 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"Q5I-wK3eJ2sMaeCRzI4tH3fKmZ13aMCft76ZZxVR7b1ASS4gybKt5MlZBJk8FxJ7Jobuy-cdLAudLZTAI-cZaA", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 65.0ms | Allocations: 7875)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000009970>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/180feefc2168bddbe1108d27cf37dffa" for 127.0.0.1 at 2022-01-21 08:56:55 +0700
+Started PUT "/__web_console/repl_sessions/180feefc2168bddbe1108d27cf37dffa" for 127.0.0.1 at 2022-01-21 08:56:55 +0700
+Started PUT "/__web_console/repl_sessions/180feefc2168bddbe1108d27cf37dffa" for 127.0.0.1 at 2022-01-21 08:56:59 +0700
+Started PUT "/__web_console/repl_sessions/180feefc2168bddbe1108d27cf37dffa" for 127.0.0.1 at 2022-01-21 08:58:09 +0700
+Started PUT "/__web_console/repl_sessions/180feefc2168bddbe1108d27cf37dffa" for 127.0.0.1 at 2022-01-21 08:58:19 +0700
+Started PUT "/__web_console/repl_sessions/180feefc2168bddbe1108d27cf37dffa" for 127.0.0.1 at 2022-01-21 09:01:00 +0700
+Started PUT "/__web_console/repl_sessions/180feefc2168bddbe1108d27cf37dffa" for 127.0.0.1 at 2022-01-21 09:01:06 +0700
+Started PUT "/__web_console/repl_sessions/180feefc2168bddbe1108d27cf37dffa" for 127.0.0.1 at 2022-01-21 09:01:10 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:05:12 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"Q5I-wK3eJ2sMaeCRzI4tH3fKmZ13aMCft76ZZxVR7b1ASS4gybKt5MlZBJk8FxJ7Jobuy-cdLAudLZTAI-cZaA", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 100.6ms | Allocations: 8029)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000009da8>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 09:05:15 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (2.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (1.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 89.0ms | Allocations: 6788)
+  Rendered valera_actions/_index.html.erb (Duration: 96.5ms | Allocations: 7091)
+  Rendered users/show.html.erb within layouts/application (Duration: 103.4ms | Allocations: 7522)
+  Rendered layout layouts/application.html.erb (Duration: 113.8ms | Allocations: 7596)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 10.6ms | Allocations: 9589)
+
+
+  
+ActionView::Template::Error (undefined method `attributes' for #<ActiveRecord::Associations::CollectionProxy [#<Condition id: 1, attr_name: "health", min: 5, max: 35, attr_name_eff: "health", value_eff: 15, valera_action_id: 1, created_at: "2022-01-20 21:49:33.908526000 +0000", updated_at: "2022-01-20 21:49:33.908526000 +0000">, #<Condition id: 2, attr_name: "health", min: 5, max: 35, attr_name_eff: "health", value_eff: 18, valera_action_id: 1, created_at: "2022-01-20 21:52:35.184976000 +0000", updated_at: "2022-01-20 21:56:36.157170000 +0000">]>):
+    12:       <%= f.hidden_field :happy, value: valera_action.happy %>
+    13:       <%= f.hidden_field :tired, value: valera_action.tired %>
+    14:       <%= f.hidden_field :money, value: valera_action.money %>
+    15:       <%= f.hidden_field :conditions, value: valera_action.conditions.attributes %>
+    16:       <%# valera_action.conditions.each do |cond| %>
+    17:         <%#= f.fields_for :conditions, valera_action.conditions do |condition_form| %>
+    18:           <%# valera_action.conditions.each do |cond| %>
+  
+app/views/valera_actions/_list.html.erb:15
+app/views/valera_actions/_list.html.erb:9
+app/views/valera_actions/_list.html.erb:5
+app/views/valera_actions/_index.html.erb:2
+app/views/users/show.html.erb:15
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 09:07:13 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (5.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (4.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (4.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (2.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (15.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 4]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (12.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 5]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 6]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (2.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 7]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (29.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 8]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 377.6ms | Allocations: 13769)
+  Rendered valera_actions/_index.html.erb (Duration: 384.6ms | Allocations: 14069)
+  Rendered users/show.html.erb within layouts/application (Duration: 404.5ms | Allocations: 14500)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 438.0ms | Allocations: 21266)
+Completed 200 OK in 514ms (Views: 365.5ms | ActiveRecord: 89.6ms | Allocations: 23356)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:07:16 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (17.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 21.5ms | Allocations: 4637)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x0000000000a730>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:08:00 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 20.6ms | Allocations: 11873)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x0000000000c698>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:08:04 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:08:04 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:08:13 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:08:21 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:08:31 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:08:35 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:08:37 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:08:45 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:09:16 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:09:17 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:09:38 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:09:40 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:09:53 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:09:58 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:11:00 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:11:08 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:14:01 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:14:02 +0700
+Started PUT "/__web_console/repl_sessions/2a03a8d17665df5e4ec973c77fa0db99" for 127.0.0.1 at 2022-01-21 09:14:03 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:14:38 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 257ms (ActiveRecord: 53.9ms | Allocations: 11523)
+
+
+  
+JSON::ParserError (809: unexpected token at '{"id"=>4, "attr_name"=>"alcohol", "min"=>0, "max"=>70, "attr_name_eff"=>"health", "value_eff"=>0, "valera_action_id"=>2, "created_at"=>"2022-01-20T22:48:05.201Z", "updated_at"=>"2022-01-20T22:48:05.201Z"} {"id"=>5, "attr_name"=>"tired", "min"=>0, "max"=>10, "attr_name_eff"=>"health", "value_eff"=>0, "valera_action_id"=>2, "created_at"=>"2022-01-20T22:48:22.699Z", "updated_at"=>"2022-01-20T22:48:22.699Z"}'):
+  
+app/controllers/users_controller.rb:59:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:16:11 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 53.9ms | Allocations: 9148)
+
+
+  
+JSON::ParserError (809: unexpected token at '{"id"=>4, "attr_name"=>"alcohol", "min"=>0, "max"=>70, "attr_name_eff"=>"health", "value_eff"=>0, "valera_action_id"=>2, "created_at"=>"2022-01-20T22:48:05.201Z", "updated_at"=>"2022-01-20T22:48:05.201Z"} {"id"=>5, "attr_name"=>"tired", "min"=>0, "max"=>10, "attr_name_eff"=>"health", "value_eff"=>0, "valera_action_id"=>2, "created_at"=>"2022-01-20T22:48:22.699Z", "updated_at"=>"2022-01-20T22:48:22.699Z"}'):
+  
+app/controllers/users_controller.rb:59:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:18:34 +0700
+  
+SyntaxError (/home/nikolai/Рабочий стол/rails-valera-online/app/controllers/users_controller.rb:59: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+...d.gsub('\"', '"').gsub('=>', :))
+...                              ^
+):
+  
+app/controllers/users_controller.rb:59: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/users_controller.rb:59: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/users_controller.rb:59: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:18:58 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (16.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 254ms (ActiveRecord: 44.9ms | Allocations: 9054)
+
+
+  
+JSON::ParserError (809: unexpected token at '{"id":5, "attr_name":"tired", "min":0, "max":10, "attr_name_eff":"health", "value_eff":0, "valera_action_id":2, "created_at":"2022-01-20T22:48:22.699Z", "updated_at":"2022-01-20T22:48:22.699Z"}'):
+  
+app/controllers/users_controller.rb:59:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:21:30 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 26.9ms | Allocations: 8998)
+
+
+  
+JSON::ParserError (809: unexpected token at '{"id" : 5, "attr_name" : "tired", "min" : 0, "max" : 10, "attr_name_eff" : "health", "value_eff" : 0, "valera_action_id" : 2, "created_at" : "2022-01-20T22:48:22.699Z", "updated_at" : "2022-01-20T22:48:22.699Z"}'):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:24:01 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 14.9ms | Allocations: 8978)
+
+
+  
+SyntaxError ((eval):1: syntax error, unexpected ':', expecting =>
+{"id" : 4, "attr_name" : "alcohol", ...
+      ^
+):
+  
+(eval):1: syntax error, unexpected ':', expecting =>
+(eval):1: syntax error, unexpected ':', expecting =>
+(eval):1: syntax error, unexpected ':', expecting =>
+app/controllers/users_controller.rb:60:in `eval'
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:24:15 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 27.8ms | Allocations: 9032)
+
+
+  
+SyntaxError ((eval):1: syntax error, unexpected '{', expecting end-of-input
+...=>"2022-01-20T22:48:05.201Z"} {"id"=>5, "attr_name"=>"tired"...
+...                              ^
+):
+  
+(eval):1: syntax error, unexpected '{', expecting end-of-input
+(eval):1: syntax error, unexpected '{', expecting end-of-input
+(eval):1: syntax error, unexpected '{', expecting end-of-input
+app/controllers/users_controller.rb:60:in `eval'
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/86f36d0a671328627dc8012305fe20ce" for 127.0.0.1 at 2022-01-21 09:25:13 +0700
+Started PUT "/__web_console/repl_sessions/86f36d0a671328627dc8012305fe20ce" for 127.0.0.1 at 2022-01-21 09:25:13 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:26:59 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 15.5ms | Allocations: 8987)
+
+
+  
+JSON::ParserError (809: unexpected token at ', {"id" : 4, "attr_name" : "alcohol", "min" : 0, "max" : 70, "attr_name_eff" : "health", "value_eff" : 0, "valera_action_id" : 2, "created_at" : "2022-01-20T22:48:05.201Z", "updated_at" : "2022-01-20T22:48:05.201Z"} , {"id" : 5, "attr_name" : "tired", "min" : 0, "max" : 10, "attr_name_eff" : "health", "value_eff" : 0, "valera_action_id" : 2, "created_at" : "2022-01-20T22:48:22.699Z", "updated_at" : "2022-01-20T22:48:22.699Z"}'):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:27:56 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 27.8ms | Allocations: 8983)
+
+
+  
+JSON::ParserError (809: unexpected token at ', {"id"=>4, "attr_name"=>"alcohol", "min"=>0, "max"=>70, "attr_name_eff"=>"health", "value_eff"=>0, "valera_action_id"=>2, "created_at"=>"2022-01-20T22:48:05.201Z", "updated_at"=>"2022-01-20T22:48:05.201Z"} , {"id"=>5, "attr_name"=>"tired", "min"=>0, "max"=>10, "attr_name_eff"=>"health", "value_eff"=>0, "valera_action_id"=>2, "created_at"=>"2022-01-20T22:48:22.699Z", "updated_at"=>"2022-01-20T22:48:22.699Z"}'):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:30:31 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"j-n2Xkk9xIGhn10kaEnOI_IsM3jIt9H_p8jLVmC2jwCMMua-LVFODmSvuSyY0PFHo2BELljCPWuNW8bxVgB71Q", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 14.9ms | Allocations: 8990)
+
+
+  
+JSON::ParserError (809: unexpected token at ', {"id" : 4, "attr_name" : "alcohol", "min" : 0, "max" : 70, "attr_name_eff" : "health", "value_eff" : 0, "valera_action_id" : 2, "created_at" : "2022-01-20T22:48:05.201Z", "updated_at" : "2022-01-20T22:48:05.201Z"} , {"id" : 5, "attr_name" : "tired", "min" : 0, "max" : 10, "attr_name_eff" : "health", "value_eff" : 0, "valera_action_id" : 2, "created_at" : "2022-01-20T22:48:22.699Z", "updated_at" : "2022-01-20T22:48:22.699Z"}'):
+  
+app/controllers/users_controller.rb:60:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 09:30:44 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (2.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (10.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (5.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (12.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (5.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 4]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (7.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 5]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 6]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (4.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 7]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (3.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 8]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 350.7ms | Allocations: 26172)
+  Rendered valera_actions/_index.html.erb (Duration: 363.9ms | Allocations: 26476)
+  Rendered users/show.html.erb within layouts/application (Duration: 371.6ms | Allocations: 26920)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 504.8ms | Allocations: 33607)
+Completed 200 OK in 695ms (Views: 512.5ms | ActiveRecord: 101.9ms | Allocations: 42539)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:30:47 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"X9VT_lfn6gcyBJLA8sbyZuEr8YCTm4adtRr0uupOG-ZcDkMeM4tgiPc0dsgCX80CsGeG1gPuagmfifkd3PjvMw", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"#<Condition::ActiveRecord_Associations_CollectionProxy:0x00007f1044365370>"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (14.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 17.0ms | Allocations: 4673)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000021c00>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:61:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:31:07 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:31:08 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:31:11 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:31:12 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:23 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:41 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:45 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:49 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:53 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:54 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:54 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:55 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:55 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:55 +0700
+Started PUT "/__web_console/repl_sessions/c5eaf2057873cefec73c0ec2774de16b" for 127.0.0.1 at 2022-01-21 09:32:56 +0700
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 09:33:23 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (3.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (8.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (4.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (12.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 4]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (10.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 5]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (15.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 6]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (11.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 7]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (1.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 8]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 415.9ms | Allocations: 13798)
+  Rendered valera_actions/_index.html.erb (Duration: 422.4ms | Allocations: 14098)
+  Rendered users/show.html.erb within layouts/application (Duration: 426.8ms | Allocations: 14528)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 538.7ms | Allocations: 21297)
+Completed 200 OK in 589ms (Views: 485.2ms | ActiveRecord: 79.5ms | Allocations: 23333)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:33:27 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 11.2ms | Allocations: 4636)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000022128>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:61:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:36:37 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 310ms (ActiveRecord: 67.6ms | Allocations: 11603)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000024090>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/a220415f81ab4d07255f0411a7507bc9" for 127.0.0.1 at 2022-01-21 09:36:42 +0700
+Started PUT "/__web_console/repl_sessions/a220415f81ab4d07255f0411a7507bc9" for 127.0.0.1 at 2022-01-21 09:36:42 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:41:04 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 34.0ms | Allocations: 11599)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000025ee0>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/f1a857deb367756ef8c78b41812205d7" for 127.0.0.1 at 2022-01-21 09:41:08 +0700
+Started PUT "/__web_console/repl_sessions/f1a857deb367756ef8c78b41812205d7" for 127.0.0.1 at 2022-01-21 09:41:09 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:41:39 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 30.8ms | Allocations: 11604)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000027d30>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/ec66d515be4554fb4c9bbfc043cf953d" for 127.0.0.1 at 2022-01-21 09:41:43 +0700
+Started PUT "/__web_console/repl_sessions/ec66d515be4554fb4c9bbfc043cf953d" for 127.0.0.1 at 2022-01-21 09:41:43 +0700
+Started PUT "/__web_console/repl_sessions/ec66d515be4554fb4c9bbfc043cf953d" for 127.0.0.1 at 2022-01-21 09:41:51 +0700
+Started PUT "/__web_console/repl_sessions/ec66d515be4554fb4c9bbfc043cf953d" for 127.0.0.1 at 2022-01-21 09:41:56 +0700
+Started PUT "/__web_console/repl_sessions/ec66d515be4554fb4c9bbfc043cf953d" for 127.0.0.1 at 2022-01-21 09:42:13 +0700
+Started PUT "/__web_console/repl_sessions/ec66d515be4554fb4c9bbfc043cf953d" for 127.0.0.1 at 2022-01-21 09:42:15 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:43:52 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 34.0ms | Allocations: 8986)
+
+
+  
+JSON::ParserError (809: unexpected token at '{"id"=>4, "attr_name"=>"alcohol", "min"=>0, "max"=>70, "attr_name_eff"=>"health", "value_eff"=>0, "valera_action_id"=>2, "created_at"=>"2022-01-20T22:48:05.201Z", "updated_at"=>"2022-01-20T22:48:05.201Z"}, {"id"=>5, "attr_name"=>"tired", "min"=>0, "max"=>10, "attr_name_eff"=>"health", "value_eff"=>0, "valera_action_id"=>2, "created_at"=>"2022-01-20T22:48:22.699Z", "updated_at"=>"2022-01-20T22:48:22.699Z"}'):
+  
+app/controllers/users_controller.rb:61:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:48:16 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 33.4ms | Allocations: 11408)
+
+
+  
+NoMethodError (undefined method `asdcond' for #<UsersController:0x0000000002b9a8>):
+  
+app/controllers/users_controller.rb:61:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:48:37 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 29.8ms | Allocations: 9027)
+
+
+  
+JSON::ParserError (809: unexpected token at ': [ {"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, {"id": 5, "attr_name": "tired", "min": 0, "max": 10, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:22.699Z", "updated_at": "2022-01-20T22:48:22.699Z"}]'):
+  
+app/controllers/users_controller.rb:61:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/45467448ff4cfca91a22075c345bc73f" for 127.0.0.1 at 2022-01-21 09:49:28 +0700
+Started PUT "/__web_console/repl_sessions/45467448ff4cfca91a22075c345bc73f" for 127.0.0.1 at 2022-01-21 09:49:30 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:52:25 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 17.0ms | Allocations: 8993)
+
+
+  
+JSON::ParserError (809: unexpected token at '{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, {"id": 5, "attr_name": "tired", "min": 0, "max": 10, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:22.699Z", "updated_at": "2022-01-20T22:48:22.699Z"}]'):
+  
+app/controllers/users_controller.rb:61:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/0f40d6856825da04523c4178cb7f8792" for 127.0.0.1 at 2022-01-21 09:52:30 +0700
+Started PUT "/__web_console/repl_sessions/0f40d6856825da04523c4178cb7f8792" for 127.0.0.1 at 2022-01-21 09:52:32 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:52:51 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 19.4ms | Allocations: 9028)
+
+
+  
+JSON::ParserError (809: unexpected token at '{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, {"id": 5, "attr_name": "tired", "min": 0, "max": 10, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:22.699Z", "updated_at": "2022-01-20T22:48:22.699Z"}]'):
+  
+app/controllers/users_controller.rb:61:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/b56b0c92bb37fbaa61fa6cdc8d3c7964" for 127.0.0.1 at 2022-01-21 09:52:55 +0700
+Started PUT "/__web_console/repl_sessions/b56b0c92bb37fbaa61fa6cdc8d3c7964" for 127.0.0.1 at 2022-01-21 09:52:57 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:54:05 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 28.0ms | Allocations: 9001)
+
+
+  
+JSON::ParserError (809: unexpected token at ': [{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, {"id": 5, "attr_name": "tired", "min": 0, "max": 10, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:22.699Z", "updated_at": "2022-01-20T22:48:22.699Z"}]'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:55:13 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 24.3ms | Allocations: 8993)
+
+
+  
+JSON::ParserError (809: unexpected token at ': [{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, {"id": 5, "attr_name": "tired", "min": 0, "max": 10, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:22.699Z", "updated_at": "2022-01-20T22:48:22.699Z"}]'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:55:32 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 19.2ms | Allocations: 9030)
+
+
+  
+JSON::ParserError (809: unexpected token at '[{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, {"id": 5, "attr_name": "tired", "min": 0, "max": 10, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:22.699Z", "updated_at": "2022-01-20T22:48:22.699Z"}]'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/887633a900eb411a36376acfc562eca1" for 127.0.0.1 at 2022-01-21 09:55:37 +0700
+Started PUT "/__web_console/repl_sessions/887633a900eb411a36376acfc562eca1" for 127.0.0.1 at 2022-01-21 09:55:38 +0700
+Started PUT "/__web_console/repl_sessions/887633a900eb411a36376acfc562eca1" for 127.0.0.1 at 2022-01-21 09:55:56 +0700
+Started PUT "/__web_console/repl_sessions/887633a900eb411a36376acfc562eca1" for 127.0.0.1 at 2022-01-21 09:56:01 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 09:58:26 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 19.6ms | Allocations: 9005)
+
+
+  
+TypeError (no implicit conversion of Hash into String):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:00:26 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (14.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (21.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 74.6ms | Allocations: 11643)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x0000000003b178>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:63:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:00:42 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 20.3ms | Allocations: 11681)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x0000000003cf78>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:63:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/bd8db99e476ce00d000dc25fb5c4d19d" for 127.0.0.1 at 2022-01-21 10:00:45 +0700
+Started PUT "/__web_console/repl_sessions/bd8db99e476ce00d000dc25fb5c4d19d" for 127.0.0.1 at 2022-01-21 10:00:46 +0700
+Started PUT "/__web_console/repl_sessions/bd8db99e476ce00d000dc25fb5c4d19d" for 127.0.0.1 at 2022-01-21 10:00:55 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:01:55 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (17.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 43.4ms | Allocations: 9000)
+
+
+  
+JSON::ParserError (809: unexpected token at ': [{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}]'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:02:28 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"AMAeDtc4zkOQe5OiqkoNkN8SVZDrJVtuIA6D8-G8ZqQDGw7us1REzFVLd6pa0zL0jl4ixntQt_oKnY5U1wqScQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 15.4ms | Allocations: 8994)
+
+
+  
+JSON::ParserError (809: unexpected token at ': {{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}}'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started GET "/" for 127.0.0.1 at 2022-01-21 10:04:37 +0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 138ms (ActiveRecord: 9.8ms | Allocations: 10951)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 10:04:38 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (19.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:5
+  [1m[36mCondition Load (5.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 1]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (19.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (9.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (21.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 4]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (2.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 5]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (3.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 6]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (2.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 7]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  [1m[36mCondition Load (2.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 8]]
+  ↳ app/views/valera_actions/_list.html.erb:6
+  Rendered valera_actions/_list.html.erb (Duration: 857.1ms | Allocations: 30424)
+  Rendered valera_actions/_index.html.erb (Duration: 894.3ms | Allocations: 30739)
+  Rendered users/show.html.erb within layouts/application (Duration: 929.1ms | Allocations: 31445)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1122.1ms | Allocations: 44516)
+Completed 200 OK in 1212ms (Views: 1017.4ms | ActiveRecord: 130.7ms | Allocations: 47922)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:04:44 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"5IW2eF5PdUCu53cNVLrgywmu8gkdnI4nLQRJ73nVHOTnXqaYOiP_z2vXkwWkI9-vWOKFX43pYrMHl0RIT2PoMQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 9.2ms | Allocations: 2262)
+
+
+  
+JSON::ParserError (809: unexpected token at ': {{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}}'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:05:17 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"5IW2eF5PdUCu53cNVLrgywmu8gkdnI4nLQRJ73nVHOTnXqaYOiP_z2vXkwWkI9-vWOKFX43pYrMHl0RIT2PoMQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 14.1ms | Allocations: 9013)
+
+
+  
+JSON::ParserError (809: unexpected token at ': [{"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"},{"id": 6}]'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:07:41 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"5IW2eF5PdUCu53cNVLrgywmu8gkdnI4nLQRJ73nVHOTnXqaYOiP_z2vXkwWkI9-vWOKFX43pYrMHl0RIT2PoMQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 20.4ms | Allocations: 9014)
+
+
+  
+JSON::ParserError (809: unexpected token at ': {"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, "conds2": {"id": 6}'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:09:38 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"5IW2eF5PdUCu53cNVLrgywmu8gkdnI4nLQRJ73nVHOTnXqaYOiP_z2vXkwWkI9-vWOKFX43pYrMHl0RIT2PoMQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 31.2ms | Allocations: 8993)
+
+
+  
+JSON::ParserError (809: unexpected token at ': ["cond1": {"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, "cond2": {"id": 6}]'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:10:25 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"5IW2eF5PdUCu53cNVLrgywmu8gkdnI4nLQRJ73nVHOTnXqaYOiP_z2vXkwWkI9-vWOKFX43pYrMHl0RIT2PoMQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 21.2ms | Allocations: 9015)
+
+
+  
+JSON::ParserError (439: unexpected token at ': {"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, "cond2": {"id": 6}]'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:10:43 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"5IW2eF5PdUCu53cNVLrgywmu8gkdnI4nLQRJ73nVHOTnXqaYOiP_z2vXkwWkI9-vWOKFX43pYrMHl0RIT2PoMQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 40.3ms | Allocations: 9030)
+
+
+  
+JSON::ParserError (809: unexpected token at ': {"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, "cond2": {"id": 6}'):
+  
+app/controllers/users_controller.rb:62:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:11:18 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"5IW2eF5PdUCu53cNVLrgywmu8gkdnI4nLQRJ73nVHOTnXqaYOiP_z2vXkwWkI9-vWOKFX43pYrMHl0RIT2PoMQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 15.5ms | Allocations: 11704)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000014690>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:63:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/b43aa16561c2b639b864b8ad0f5c6dc7" for 127.0.0.1 at 2022-01-21 10:11:24 +0700
+Started PUT "/__web_console/repl_sessions/b43aa16561c2b639b864b8ad0f5c6dc7" for 127.0.0.1 at 2022-01-21 10:11:24 +0700
+Started PUT "/__web_console/repl_sessions/b43aa16561c2b639b864b8ad0f5c6dc7" for 127.0.0.1 at 2022-01-21 10:11:34 +0700
+Started PUT "/__web_console/repl_sessions/b43aa16561c2b639b864b8ad0f5c6dc7" for 127.0.0.1 at 2022-01-21 10:12:02 +0700
+Started PUT "/__web_console/repl_sessions/b43aa16561c2b639b864b8ad0f5c6dc7" for 127.0.0.1 at 2022-01-21 10:12:13 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 10:14:14 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"5IW2eF5PdUCu53cNVLrgywmu8gkdnI4nLQRJ73nVHOTnXqaYOiP_z2vXkwWkI9-vWOKFX43pYrMHl0RIT2PoMQ", "user"=>{"health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100", "conditions"=>"{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `update'
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 21.9ms | Allocations: 11651)
+
+
+  
+NameError (undefined local variable or method `redirectv_to' for #<UsersController:0x00000000016508>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:64:in `user_update'
+app/controllers/users_controller.rb:36:in `update'
+Started PUT "/__web_console/repl_sessions/5e49e7c457edde553bfa06e062bbe01e" for 127.0.0.1 at 2022-01-21 10:14:18 +0700
+Started PUT "/__web_console/repl_sessions/5e49e7c457edde553bfa06e062bbe01e" for 127.0.0.1 at 2022-01-21 10:14:18 +0700
