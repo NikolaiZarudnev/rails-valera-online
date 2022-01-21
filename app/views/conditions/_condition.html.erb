@@ -1,5 +1,5 @@
-<div class="cart">
-  <div style="background-color: rgba(219, 235, 228, 0.178);">
+<div class="">
+  <div>
     <p>
       <strong>Condition:</strong>
       <strong>attr_name:</strong>
@@ -14,8 +14,8 @@
       <%= condition.value_eff %>
     </p>
   </div>
-  <%= link_to 'Редактировать', edit_valera_action_condition_path(condition.valera_action, condition), class: "categorieOptions" if user_signed_in?() %>
-  <%= link_to 'Убрать', [condition.valera_action, condition], class: "categorieOptions",
+  <%= link_to 'Редактировать', edit_valera_action_condition_path(condition.valera_action, condition), class: "" if user_signed_in?() %>
+  <%= link_to 'Убрать', [condition.valera_action, condition], class: "",
               method: :delete,
               data: { confirm: 'Are you sure?' } if user_signed_in?() %>
 </div>

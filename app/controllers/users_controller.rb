@@ -47,7 +47,6 @@ class UsersController < ApplicationController
   end
 
   def user_update
-    # redirectv_to
     action_effect = params[:user].permit!
     if action_effect["action_id"] == "New game"
       new_stat
