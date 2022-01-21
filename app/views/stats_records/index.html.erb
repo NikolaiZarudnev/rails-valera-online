@@ -1,0 +1,14 @@
+<div class="titlePage">Records</div>
+
+<div class="listCategories">
+  <% @stats_records.each do |stats_record| %>
+    <div class="categorie">
+
+    <%= stats_record.id %>
+    <%= stats_record.name %>
+    <%= stats_record.money  %>
+    </div>
+
+  <% end %>
+</div>
+

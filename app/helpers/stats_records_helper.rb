@@ -1,0 +1,2 @@
+module StatsRecordsHelper
+end

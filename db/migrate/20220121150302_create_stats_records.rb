@@ -3,7 +3,6 @@ class CreateStatsRecords < ActiveRecord::Migration[6.1]
     create_table :stats_records do |t|
       t.string :name
       t.integer :money
-      t.reference :user
 
       t.timestamps
     end

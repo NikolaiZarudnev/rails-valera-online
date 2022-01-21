@@ -22660,3 +22660,1868 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 135ms (Views: 102.6ms | ActiveRecord: 7.1ms | Allocations: 12998)
 
 
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 20:48:21 +0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220121125359_create_stats_records.rb
+
+
+):
+  
+activerecord (6.1.4.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activesupport (6.1.4.1) lib/active_support/evented_file_update_checker.rb:65:in `execute_if_updated'
+activerecord (6.1.4.1) lib/active_record/migration.rb:597:in `block in call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2022-01-21 20:48:24 +0700
+  [1m[35m (73.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStatsRecords (20220121125359)
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (55.1ms)[0m  [1m[35mCREATE TABLE "stats_records" ("id" bigserial primary key, "name" character varying, "money" integer, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_a97dc77ab8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_stats_records_on_user_id" ON "stats_records" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220121125359"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 20:48:25 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:151:in `save_max_stat'
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:151:in `save_max_stat'
+  [1m[36mStatsRecord Create (1.8ms)[0m  [1m[32mINSERT INTO "stats_records" ("money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["money", 300], ["user_id", 1], ["created_at", "2022-01-21 13:48:25.496317"], ["updated_at", "2022-01-21 13:48:25.496317"]]
+  ↳ app/controllers/users_controller.rb:151:in `save_max_stat'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:151:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.6ms | Allocations: 560)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (2.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 136.6ms | Allocations: 11730)
+  Rendered valera_actions/_index.html.erb (Duration: 140.5ms | Allocations: 12042)
+  Rendered users/show.html.erb within layouts/application (Duration: 161.2ms | Allocations: 13447)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 519.2ms | Allocations: 49395)
+Completed 200 OK in 627ms (Views: 519.9ms | ActiveRecord: 27.2ms | Allocations: 66998)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 20:48:30 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"cOUefTmDBHXKVAJQ7sq3ND2zI3SpG8HAi8Vy7kzb_ug1zW_If2CdVCbu-A4iP02uLYsDxV8x-nXnV3O-dkANmQ", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `update'
+  [1m[36mValeraAction Load (0.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `user_update'
+  [1m[36mCondition Load (1.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:61:in `user_update'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `user_update'
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "money" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["happy", -5], ["tired", 70], ["money", 400], ["updated_at", "2022-01-21 13:48:30.279704"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `user_update'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:61:in `user_update'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 257ms (ActiveRecord: 37.6ms | Allocations: 27104)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 20:48:30 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:151:in `save_max_stat'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:151:in `save_max_stat'
+  [1m[36mStatsRecord Create (2.5ms)[0m  [1m[32mINSERT INTO "stats_records" ("money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["money", 400], ["user_id", 1], ["created_at", "2022-01-21 13:48:30.385714"], ["updated_at", "2022-01-21 13:48:30.385714"]]
+  ↳ app/controllers/users_controller.rb:151:in `save_max_stat'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:151:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.9ms | Allocations: 362)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 30.1ms | Allocations: 5098)
+  Rendered valera_actions/_index.html.erb (Duration: 33.2ms | Allocations: 5195)
+  Rendered users/show.html.erb within layouts/application (Duration: 44.7ms | Allocations: 5840)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.9ms | Allocations: 12587)
+Completed 200 OK in 137ms (Views: 66.0ms | ActiveRecord: 16.5ms | Allocations: 21970)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 20:53:45 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (4.4ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 13:53:45.391920"], ["updated_at", "2022-01-21 13:53:45.391920"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 17.8ms | Allocations: 4608)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 4682)
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 28.8ms | Allocations: 24102)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `stats_records_path' for #<ActionView::Base:0x0000000003c2d0>
+Did you mean?  @stats_record):
+    1: <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
+    2: <%= link_to 'Records', stats_records_path %>
+    3: 
+    4: <%= render 'new_game' %>
+    5: <p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 20:54:09 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (1.3ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 13:54:09.248840"], ["updated_at", "2022-01-21 13:54:09.248840"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (77.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 3777)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 3851)
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 85.1ms | Allocations: 9365)
+
+
+  
+ActionView::Template::Error (undefined method `stats_record_path' for #<ActionView::Base:0x0000000003c820>):
+    1: <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
+    2: <%= link_to 'Records', @stats_record %>
+    3: 
+    4: <%= render 'new_game' %>
+    5: <p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 20:54:51 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (1.9ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 13:54:51.301927"], ["updated_at", "2022-01-21 13:54:51.301927"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (73.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 5.1ms | Allocations: 561)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.8ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 46.4ms | Allocations: 11730)
+  Rendered valera_actions/_index.html.erb (Duration: 51.0ms | Allocations: 12042)
+  Rendered users/show.html.erb within layouts/application (Duration: 65.8ms | Allocations: 13357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 83.2ms | Allocations: 20294)
+Completed 200 OK in 256ms (Views: 78.2ms | ActiveRecord: 107.9ms | Allocations: 37374)
+
+
+Started GET "/stats_record.5" for 127.0.0.1 at 2022-01-21 20:54:54 +0700
+  
+SyntaxError (/home/nikolai/Рабочий стол/rails-valera-online/app/controllers/stats_records_controller.rb:28: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/stats_records_controller.rb:28: syntax error, unexpected `end', expecting end-of-input
+app/controllers/stats_records_controller.rb:28: syntax error, unexpected `end', expecting end-of-input
+app/controllers/stats_records_controller.rb:28: syntax error, unexpected `end', expecting end-of-input
+Started GET "/stats_record.5" for 127.0.0.1 at 2022-01-21 20:55:22 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for StatsRecordsController
+Did you mean?  new
+               index):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/stats_record.5" for 127.0.0.1 at 2022-01-21 20:56:17 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for StatsRecordsController
+Did you mean?  new
+               index):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/stats_record.5" for 127.0.0.1 at 2022-01-21 20:56:47 +0700
+Processing by StatsRecordsController#show as */*
+Completed 404 Not Found in 11ms (ActiveRecord: 3.8ms | Allocations: 2035)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find StatsRecord without an ID):
+  
+app/controllers/stats_records_controller.rb:9:in `show'
+Started GET "/stats_record.5" for 127.0.0.1 at 2022-01-21 20:57:22 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/stats_record.5"):
+  
+Started GET "/stats_record.5" for 127.0.0.1 at 2022-01-21 20:57:32 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/stats_record.5"):
+  
+Started GET "/stats_record.5" for 127.0.0.1 at 2022-01-21 20:58:30 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/stats_record.5"):
+  
+Started GET "/stats_record.5" for 127.0.0.1 at 2022-01-21 20:58:41 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/stats_record.5"):
+  
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 20:59:44 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (4.5ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 13:59:44.813442"], ["updated_at", "2022-01-21 13:59:44.813442"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 4.6ms | Allocations: 538)
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (9.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 150.6ms | Allocations: 11734)
+  Rendered valera_actions/_index.html.erb (Duration: 156.1ms | Allocations: 12046)
+  Rendered users/show.html.erb within layouts/application (Duration: 192.8ms | Allocations: 13618)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 228.6ms | Allocations: 20555)
+Completed 200 OK in 560ms (Views: 208.0ms | ActiveRecord: 88.4ms | Allocations: 38137)
+
+
+Started GET "/stats_record.6" for 127.0.0.1 at 2022-01-21 20:59:47 +0700
+Processing by StatsRecordsController#show as */*
+Completed 404 Not Found in 7ms (ActiveRecord: 0.0ms | Allocations: 759)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find StatsRecord without an ID):
+  
+app/controllers/stats_records_controller.rb:9:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:01:28 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (3.3ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 14:01:28.461347"], ["updated_at", "2022-01-21 14:01:28.461347"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (78.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.9ms | Allocations: 405)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (3.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 47.3ms | Allocations: 11292)
+  Rendered valera_actions/_index.html.erb (Duration: 53.7ms | Allocations: 11392)
+  Rendered users/show.html.erb within layouts/application (Duration: 69.4ms | Allocations: 12264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 86.7ms | Allocations: 19011)
+Completed 200 OK in 285ms (Views: 83.7ms | ActiveRecord: 113.3ms | Allocations: 35919)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:03:00 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (6.0ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 14:03:00.545768"], ["updated_at", "2022-01-21 14:03:00.545768"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (75.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 8.6ms | Allocations: 538)
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (2.8ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 77.5ms | Allocations: 11728)
+  Rendered valera_actions/_index.html.erb (Duration: 84.1ms | Allocations: 12040)
+  Rendered users/show.html.erb within layouts/application (Duration: 123.4ms | Allocations: 13616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 146.8ms | Allocations: 20548)
+Completed 200 OK in 394ms (Views: 152.8ms | ActiveRecord: 124.7ms | Allocations: 38072)
+
+
+Started GET "/stats_record.8" for 127.0.0.1 at 2022-01-21 21:03:02 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for StatsRecordsController
+Did you mean?  index):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/stats_record.8" for 127.0.0.1 at 2022-01-21 21:05:55 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for StatsRecordsController
+Did you mean?  index):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:05:57 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (13.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (12.4ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 14:05:57.391760"], ["updated_at", "2022-01-21 14:05:57.391760"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (76.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.8ms | Allocations: 480)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (5.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 35.8ms | Allocations: 5517)
+  Rendered valera_actions/_index.html.erb (Duration: 41.9ms | Allocations: 5826)
+  Rendered users/show.html.erb within layouts/application (Duration: 53.3ms | Allocations: 8010)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 75.1ms | Allocations: 14989)
+Completed 200 OK in 272ms (Views: 82.5ms | ActiveRecord: 117.0ms | Allocations: 20556)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:06:18 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (1.2ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 14:06:18.454103"], ["updated_at", "2022-01-21 14:06:18.454103"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (77.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 4.2ms | Allocations: 490)
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (5.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 87.5ms | Allocations: 5517)
+  Rendered valera_actions/_index.html.erb (Duration: 96.8ms | Allocations: 5825)
+  Rendered users/show.html.erb within layouts/application (Duration: 127.3ms | Allocations: 7176)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 151.1ms | Allocations: 14150)
+Completed 200 OK in 354ms (Views: 165.5ms | ActiveRecord: 95.8ms | Allocations: 19787)
+
+
+Started GET "/users/users/records" for 127.0.0.1 at 2022-01-21 21:06:20 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/users/records"):
+  
+Started GET "/users/users/records" for 127.0.0.1 at 2022-01-21 21:06:40 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/users/records"):
+  
+Started GET "/users/users/records" for 127.0.0.1 at 2022-01-21 21:07:22 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/users/records"):
+  
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:07:26 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (1.2ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 14:07:26.302421"], ["updated_at", "2022-01-21 14:07:26.302421"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (74.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 2.0ms | Allocations: 490)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 32.2ms | Allocations: 5517)
+  Rendered valera_actions/_index.html.erb (Duration: 35.4ms | Allocations: 5826)
+  Rendered users/show.html.erb within layouts/application (Duration: 47.2ms | Allocations: 7179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.4ms | Allocations: 14158)
+Completed 200 OK in 261ms (Views: 81.2ms | ActiveRecord: 91.1ms | Allocations: 19556)
+
+
+Started GET "/users/stats_records/index" for 127.0.0.1 at 2022-01-21 21:07:28 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/stats_records/index"):
+  
+Started GET "/users/stats_records/index" for 127.0.0.1 at 2022-01-21 21:08:01 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/stats_records/index"):
+  
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:08:08 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (1.2ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 14:08:08.805816"], ["updated_at", "2022-01-21 14:08:08.805816"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.3ms | Allocations: 490)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (6.7ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 43.7ms | Allocations: 5517)
+  Rendered valera_actions/_index.html.erb (Duration: 47.9ms | Allocations: 5827)
+  Rendered users/show.html.erb within layouts/application (Duration: 63.6ms | Allocations: 7188)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 86.7ms | Allocations: 14167)
+Completed 200 OK in 193ms (Views: 90.3ms | ActiveRecord: 29.7ms | Allocations: 19564)
+
+
+Started GET "/user/stats_record" for 127.0.0.1 at 2022-01-21 21:08:10 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for StatsRecordsController
+Did you mean?  index):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:08:21 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (2.8ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 14:08:22.057125"], ["updated_at", "2022-01-21 14:08:22.057125"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 24.1ms | Allocations: 4766)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 4840)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 23.5ms | Allocations: 10229)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_stats_records_path' for #<ActionView::Base:0x00000000058610>
+Did you mean?  user_stats_record_path
+               user_stats_record_url):
+    1: <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
+    2: <%= link_to 'Records', user_stats_records_path%>
+    3: 
+    4: <%= render 'new_game' %>
+    5: <p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:08:34 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (6.0ms)[0m  [1m[32mINSERT INTO "stats_records" ("name", "money", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["money", 400], ["user_id", 1], ["created_at", "2022-01-21 14:08:35.066043"], ["updated_at", "2022-01-21 14:08:35.066043"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (79.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 37.1ms | Allocations: 4756)
+  Rendered layout layouts/application.html.erb (Duration: 55.2ms | Allocations: 4830)
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 110.0ms | Allocations: 10349)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `stats_records_path' for #<ActionView::Base:0x00000000058b88>
+Did you mean?  stats_record_path
+               stats_record_url):
+    1: <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
+    2: <%= link_to 'Records', stats_records_path%>
+    3: 
+    4: <%= render 'new_game' %>
+    5: <p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 21:55:20 +0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220121145326_create_stats_records.rb
+
+
+):
+  
+activerecord (6.1.4.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activesupport (6.1.4.1) lib/active_support/evented_file_update_checker.rb:65:in `execute_if_updated'
+activerecord (6.1.4.1) lib/active_record/migration.rb:597:in `block in call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2022-01-21 21:55:22 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStatsRecords (20220121145326)
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (88.6ms)[0m  [1m[35mCREATE TABLE "stats_records" ("id" bigserial primary key, "name" character varying, "money" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "stats_records" already exists
+):
+  
+rack-mini-profiler (2.3.3) lib/patches/db/pg.rb:113:in `exec'
+rack-mini-profiler (2.3.3) lib/patches/db/pg.rb:113:in `async_exec'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:47:in `block (2 levels) in execute'
+activesupport (6.1.4.1) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (6.1.4.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (6.1.4.1) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:46:in `block in execute'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract_adapter.rb:696:in `block (2 levels) in log'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract_adapter.rb:695:in `block in log'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract_adapter.rb:687:in `log'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:45:in `execute'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:322:in `create_table'
+activerecord (6.1.4.1) lib/active_record/migration.rb:929:in `block in method_missing'
+activerecord (6.1.4.1) lib/active_record/migration.rb:897:in `block in say_with_time'
+/home/nikolai/.rbenv/versions/3.0.2/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+activerecord (6.1.4.1) lib/active_record/migration.rb:897:in `say_with_time'
+activerecord (6.1.4.1) lib/active_record/migration.rb:918:in `method_missing'
+db/migrate/20220121145326_create_stats_records.rb:3:in `change'
+activerecord (6.1.4.1) lib/active_record/migration.rb:867:in `exec_migration'
+activerecord (6.1.4.1) lib/active_record/migration.rb:851:in `block (2 levels) in migrate'
+/home/nikolai/.rbenv/versions/3.0.2/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+activerecord (6.1.4.1) lib/active_record/migration.rb:850:in `block in migrate'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:462:in `with_connection'
+activerecord (6.1.4.1) lib/active_record/migration.rb:849:in `migrate'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1037:in `migrate'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1329:in `block in execute_migration_in_transaction'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1380:in `block in ddl_transaction'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `block in transaction'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:319:in `block in within_new_transaction'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.4.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `transaction'
+activerecord (6.1.4.1) lib/active_record/transactions.rb:209:in `transaction'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1380:in `ddl_transaction'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1328:in `execute_migration_in_transaction'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1302:in `each'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1302:in `migrate_without_lock'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1251:in `block in migrate'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1401:in `block in with_advisory_lock'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1416:in `block in with_advisory_lock_connection'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:462:in `with_connection'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1416:in `with_advisory_lock_connection'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1397:in `with_advisory_lock'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1251:in `migrate'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1086:in `up'
+activerecord (6.1.4.1) lib/active_record/migration.rb:1061:in `migrate'
+activerecord (6.1.4.1) lib/active_record/tasks/database_tasks.rb:237:in `migrate'
+activerecord (6.1.4.1) lib/active_record/migration.rb:137:in `block in <class:PendingMigrationError>'
+activesupport (6.1.4.1) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStatsRecords (20220121145326)
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "stats_records" ("id" bigserial primary key, "name" character varying, "money" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStatsRecords (20220121145326)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCREATE TABLE "stats_records" ("id" bigserial primary key, "name" character varying, "money" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (11.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStatsRecords (20220121145326)
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (86.9ms)[0m  [1m[35mDROP TABLE "stats_records"[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "stats_records" ("id" bigserial primary key)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220121145326"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDroptables (20220121150119)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mDROP TABLE "stats_records"[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "droptables" ("id" bigserial primary key)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220121150119"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStatsRecords (20220121150302)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (82.1ms)[0m  [1m[35mCREATE TABLE "stats_records" ("id" bigserial primary key, "name" character varying, "money" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220121150302"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/rails/actions" for 127.0.0.1 at 2022-01-21 22:03:23 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1259679036239343510)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(1259679036239343510)[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:03:24 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (20.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 33.5ms | Allocations: 15785)
+
+
+  
+NoMethodError (undefined method `user_id=' for #<StatsRecord id: nil, name: nil, money: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/users_controller.rb:149:in `save_max_stat'
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:03:45 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (1.7ms)[0m  [1m[32mINSERT INTO "stats_records" ("id", "name", "money", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1], ["name", "admin"], ["money", 400], ["created_at", "2022-01-21 15:03:46.035865"], ["updated_at", "2022-01-21 15:03:46.035865"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (77.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 18.3ms | Allocations: 4817)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 4892)
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 92.3ms | Allocations: 20045)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `stats_records_path' for #<ActionView::Base:0x0000000000bcc0>
+Did you mean?  stats_record_path
+               stats_record_url):
+    1: <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
+    2: <%= link_to 'Records', stats_records_path%>
+    3: 
+    4: <%= render 'new_game' %>
+    5: <p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:04:19 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mStatsRecord Create (4.0ms)[0m  [1m[32mINSERT INTO "stats_records" ("id", "name", "money", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1], ["name", "admin"], ["money", 400], ["created_at", "2022-01-21 15:04:19.144877"], ["updated_at", "2022-01-21 15:04:19.144877"]]
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:152:in `save_max_stat'
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 40.7ms | Allocations: 4228)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "stats_records_pkey"
+DETAIL:  Key (id)=(1) already exists.
+):
+  
+app/controllers/users_controller.rb:152:in `save_max_stat'
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:06:15 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 22.5ms | Allocations: 14669)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x0000000000e718>
+Did you mean?  @user):
+  
+app/controllers/users_controller.rb:150:in `save_max_stat'
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:06:24 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mStatsRecord Load (1.3ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:150:in `save_max_stat'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:155:in `save_max_stat'
+  [1m[36mStatsRecord Create (1.8ms)[0m  [1m[32mINSERT INTO "stats_records" ("id", "name", "money", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1], ["name", "admin"], ["money", 400], ["created_at", "2022-01-21 15:06:24.565155"], ["updated_at", "2022-01-21 15:06:24.565155"]]
+  ↳ app/controllers/users_controller.rb:155:in `save_max_stat'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:155:in `save_max_stat'
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 20.7ms | Allocations: 15442)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "stats_records_pkey"
+DETAIL:  Key (id)=(1) already exists.
+):
+  
+app/controllers/users_controller.rb:155:in `save_max_stat'
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:08:01 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mStatsRecord Load (1.5ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 22.7ms | Allocations: 14560)
+
+
+  
+NoMethodError (undefined method `exist?' for #<StatsRecord id: 1, name: "admin", money: 400, created_at: "2022-01-21 15:03:46.035865000 +0000", updated_at: "2022-01-21 15:03:46.035865000 +0000">):
+  
+app/controllers/users_controller.rb:148:in `save_max_stat'
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:08:20 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mStatsRecord Load (1.5ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 17.5ms | Allocations: 14574)
+
+
+  
+NoMethodError (undefined method `exists?' for #<StatsRecord id: 1, name: "admin", money: 400, created_at: "2022-01-21 15:03:46.035865000 +0000", updated_at: "2022-01-21 15:03:46.035865000 +0000">):
+  
+app/controllers/users_controller.rb:148:in `save_max_stat'
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:09:11 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mStatsRecord Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.4ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 79.1ms | Allocations: 964)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 46.1ms | Allocations: 12057)
+  Rendered valera_actions/_index.html.erb (Duration: 51.5ms | Allocations: 12395)
+  Rendered users/show.html.erb within layouts/application (Duration: 142.1ms | Allocations: 14310)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 216.6ms | Allocations: 39284)
+Completed 200 OK in 295ms (Views: 216.1ms | ActiveRecord: 27.0ms | Allocations: 53729)
+
+
+Started GET "/stats_record" for 127.0.0.1 at 2022-01-21 22:09:13 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for StatsRecordsController
+Did you mean?  index):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:09:20 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mStatsRecord Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.1ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.8ms | Allocations: 297)
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (4.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 79.6ms | Allocations: 4903)
+  Rendered valera_actions/_index.html.erb (Duration: 100.6ms | Allocations: 4999)
+  Rendered users/show.html.erb within layouts/application (Duration: 117.0ms | Allocations: 5548)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 184.6ms | Allocations: 12281)
+Completed 200 OK in 253ms (Views: 200.9ms | ActiveRecord: 14.1ms | Allocations: 15029)
+
+
+Started GET "/stats_record" for 127.0.0.1 at 2022-01-21 22:09:22 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for StatsRecordsController
+Did you mean?  index):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/stats_record" for 127.0.0.1 at 2022-01-21 22:09:50 +0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for StatsRecordsController
+Did you mean?  index):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/stats_records" for 127.0.0.1 at 2022-01-21 22:09:55 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/stats_records"):
+  
+Started GET "/stats_records" for 127.0.0.1 at 2022-01-21 22:10:57 +0700
+Processing by StatsRecordsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stats_records/index.html.erb within layouts/application
+  Rendered stats_records/index.html.erb within layouts/application (Duration: 76.7ms | Allocations: 1580)
+  Rendered layout layouts/application.html.erb (Duration: 86.8ms | Allocations: 1654)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms | Allocations: 3639)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <div class="titlePage">Records</div>
+    2: 
+    3: <div class="listCategories">
+    4:   <% @users.each.stats_record do |stats_record| %>
+    5:     <div class="categorie">
+    6:     <%= stats_record.id; stats_record.name; stats_record.money %>
+    7:     </div>
+  
+app/views/stats_records/index.html.erb:4
+Started GET "/stats_records" for 127.0.0.1 at 2022-01-21 22:11:19 +0700
+Processing by StatsRecordsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stats_records/index.html.erb within layouts/application
+  Rendered stats_records/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 1266)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms | Allocations: 2626)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="titlePage">Records</div>
+
+<div class="listCategories">
+  <% @stats_records do |stats_record| %>
+    <div class="categorie">
+    <%= stats_record.id; stats_record.name; stats_record.money %>
+    </div>
+
+  <% end %>
+</div>
+
+
+):
+1:    <div class="titlePage">Records</div>
+2:    
+3:    <div class="listCategories">
+4:      <% @stats_records do |stats_record| %>
+5:        <div class="categorie">
+6:        <%= stats_record.id; stats_record.name; stats_record.money %>
+7:        </div>
+8:    
+9:      <% end %>
+10:    </div>
+  
+app/views/stats_records/index.html.erb:4: syntax error, unexpected `do', expecting `end'
+app/views/stats_records/index.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/stats_records/index.html.erb:4: syntax error, unexpected `do', expecting `end'
+app/views/stats_records/index.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/stats_records/index.html.erb:4: syntax error, unexpected `do', expecting `end'
+app/views/stats_records/index.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/stats_records/index.html.erb:4: syntax error, unexpected `do', expecting `end'
+app/views/stats_records/index.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/stats_records/index.html.erb:4: syntax error, unexpected `do', expecting `end'
+app/views/stats_records/index.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/stats_records/index.html.erb:4: syntax error, unexpected `do', expecting `end'
+app/views/stats_records/index.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+Started GET "/stats_records" for 127.0.0.1 at 2022-01-21 22:11:36 +0700
+Processing by StatsRecordsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stats_records/index.html.erb within layouts/application
+  [1m[36mStatsRecord Load (4.2ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records"[0m
+  ↳ app/views/stats_records/index.html.erb:4
+  Rendered stats_records/index.html.erb within layouts/application (Duration: 70.9ms | Allocations: 4131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 94.9ms | Allocations: 11149)
+Completed 200 OK in 171ms (Views: 139.2ms | ActiveRecord: 13.8ms | Allocations: 12543)
+
+
+Started GET "/stats_records" for 127.0.0.1 at 2022-01-21 22:12:35 +0700
+Processing by StatsRecordsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stats_records/index.html.erb within layouts/application
+  [1m[36mStatsRecord Load (11.6ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records"[0m
+  ↳ app/views/stats_records/index.html.erb:4
+  Rendered stats_records/index.html.erb within layouts/application (Duration: 27.1ms | Allocations: 1206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.5ms | Allocations: 8220)
+Completed 200 OK in 100ms (Views: 85.5ms | ActiveRecord: 11.6ms | Allocations: 9602)
+
+
+Started GET "/stats_records" for 127.0.0.1 at 2022-01-21 22:14:42 +0700
+Processing by StatsRecordsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stats_records/index.html.erb within layouts/application
+  [1m[36mStatsRecord Load (3.3ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records"[0m
+  ↳ app/views/stats_records/index.html.erb:4
+  Rendered stats_records/index.html.erb within layouts/application (Duration: 40.4ms | Allocations: 3922)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.5ms | Allocations: 10744)
+Completed 200 OK in 99ms (Views: 80.7ms | ActiveRecord: 14.7ms | Allocations: 12083)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-21 22:20:07 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 46ms (ActiveRecord: 11.8ms | Allocations: 8732)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:20:07 +0700
+  
+SyntaxError (/home/nikolai/Рабочий стол/rails-valera-online/app/controllers/users_controller.rb:92: syntax error, unexpected local variable or method, expecting `end'
+...ond_is_true?(cond)action_effect[cond.attr_name_eff] = cond.v...
+...                  ^~~~~~~~~~~~~
+):
+  
+app/controllers/users_controller.rb:92: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:92: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:92: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:23:32 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mStatsRecord Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.7ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 14.8ms | Allocations: 563)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 76.8ms | Allocations: 11794)
+  Rendered valera_actions/_index.html.erb (Duration: 83.5ms | Allocations: 12107)
+  Rendered users/show.html.erb within layouts/application (Duration: 123.2ms | Allocations: 13562)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 148.4ms | Allocations: 20355)
+Completed 200 OK in 291ms (Views: 165.8ms | ActiveRecord: 27.3ms | Allocations: 34437)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:23:49 +0700
+  
+SyntaxError (/home/nikolai/Рабочий стол/rails-valera-online/app/controllers/users_controller.rb:92: syntax error, unexpected local variable or method, expecting `end'
+...ond_is_true?(cond)action_effect[cond.attr_name_eff] = cond.v...
+...                  ^~~~~~~~~~~~~
+):
+  
+app/controllers/users_controller.rb:92: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:92: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:92: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:25:36 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (0.9ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.5ms | Allocations: 430)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 42.0ms | Allocations: 11281)
+  Rendered valera_actions/_index.html.erb (Duration: 46.3ms | Allocations: 11381)
+  Rendered users/show.html.erb within layouts/application (Duration: 54.5ms | Allocations: 12125)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 73.5ms | Allocations: 18918)
+Completed 200 OK in 158ms (Views: 72.6ms | ActiveRecord: 26.8ms | Allocations: 32596)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 22:25:39 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"WoAGOawBjMYZuGjSlOAlMQex_hJwYU9ZnAgCOvVGaawfqHeM6uIV5_UCkoxYFd-rF4neo4ZLdOzwmgNqz92a3Q", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (0.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (1.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 177ms (ActiveRecord: 15.7ms | Allocations: 12090)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:25:39 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (5.8ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.3ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.7ms | Allocations: 295)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 37.9ms | Allocations: 4902)
+  Rendered valera_actions/_index.html.erb (Duration: 40.9ms | Allocations: 4998)
+  Rendered users/show.html.erb within layouts/application (Duration: 49.7ms | Allocations: 5558)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 68.7ms | Allocations: 12275)
+Completed 200 OK in 154ms (Views: 74.6ms | ActiveRecord: 15.1ms | Allocations: 15012)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 22:25:42 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"LRHOHAJru9qxF3XRjvdJoq81z7Isy3tJ_0epz5-H4IhoOb-pRIgi-12tj49CArM4vw3vA9rhQPyT1aifpRwT-Q", "user"=>{"action_id"=>"3", "health"=>"0", "alcohol"=>"-10", "happy"=>"1", "tired"=>"10", "money"=>"0"}, "commit"=>"Relax in nature", "id"=>"1"}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (2.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (1.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Update (5.2ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["happy", -4], ["tired", 80], ["updated_at", "2022-01-21 15:25:42.404843"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (76.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 243ms (ActiveRecord: 98.4ms | Allocations: 7046)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:25:42 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.3ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.7ms | Allocations: 257)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 29.1ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 31.6ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 38.2ms | Allocations: 5482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.4ms | Allocations: 12088)
+Completed 200 OK in 106ms (Views: 62.0ms | ActiveRecord: 8.4ms | Allocations: 14520)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 22:26:38 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"2uC8obJH6LoXk1zPyPWTc1AzMQcshCP2fsZ5Sp5hQayfyM0U9KRxm_spppEEAGnpQAsRttquGEMSVHgapPqy3Q", "user"=>{"action_id"=>"3", "health"=>"0", "alcohol"=>"-10", "happy"=>"1", "tired"=>"10", "money"=>"0"}, "commit"=>"Relax in nature", "id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (1.0ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (1.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["happy", -3], ["tired", 90], ["updated_at", "2022-01-21 15:26:38.701540"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 115ms (ActiveRecord: 13.8ms | Allocations: 6402)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:26:38 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (3.9ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.2ms | Allocations: 257)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (2.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 28.2ms | Allocations: 4893)
+  Rendered valera_actions/_index.html.erb (Duration: 31.0ms | Allocations: 4989)
+  Rendered users/show.html.erb within layouts/application (Duration: 37.8ms | Allocations: 5483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.4ms | Allocations: 12082)
+Completed 200 OK in 99ms (Views: 62.0ms | ActiveRecord: 11.2ms | Allocations: 14513)
+
+
+Started GET "/valera_actions/2" for 127.0.0.1 at 2022-01-21 22:26:39 +0700
+Processing by ValeraActionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mValeraAction Load (1.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/valera_actions_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering valera_actions/show.html.erb within layouts/application
+  [1m[36mCondition Load (2.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/views/valera_actions/show.html.erb:5
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered collection of conditions/_condition.html.erb [2 times] (Duration: 154.0ms | Allocations: 1908)
+  Rendered valera_actions/show.html.erb within layouts/application (Duration: 301.7ms | Allocations: 3754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 414.6ms | Allocations: 10553)
+Completed 200 OK in 461ms (Views: 423.3ms | ActiveRecord: 18.2ms | Allocations: 12573)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:26:42 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (3.9ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (7.7ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 11.9ms | Allocations: 277)
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (12.0ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 91.4ms | Allocations: 5521)
+  Rendered valera_actions/_index.html.erb (Duration: 100.8ms | Allocations: 5617)
+  Rendered users/show.html.erb within layouts/application (Duration: 134.3ms | Allocations: 6142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 169.1ms | Allocations: 12749)
+Completed 200 OK in 348ms (Views: 196.7ms | ActiveRecord: 29.8ms | Allocations: 15448)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-21 22:26:43 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"JI60537mgVkwBofAFULH17d0DOt1SwpDpc8zWEokKfo9RBrgeESzGu1nd0WMt4C1fx9hwZpuVhDmplYVFTeJzQ", "user"=>{"action_id"=>"New game"}, "commit"=>"New game", "id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (8.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Update (6.2ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "money" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["happy", 0], ["tired", 0], ["money", 300], ["updated_at", "2022-01-21 15:26:44.100148"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (78.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 296ms (ActiveRecord: 112.0ms | Allocations: 5135)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-21 22:26:44 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (11.3ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (4.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.7ms | Allocations: 257)
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (7.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 85.0ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 88.1ms | Allocations: 4991)
+  Rendered users/show.html.erb within layouts/application (Duration: 101.8ms | Allocations: 5487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 165.8ms | Allocations: 12085)
+Completed 200 OK in 255ms (Views: 163.7ms | ActiveRecord: 35.4ms | Allocations: 14515)
+
+
+Started GET "/stats_records" for 127.0.0.1 at 2022-01-21 22:26:46 +0700
+Processing by StatsRecordsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stats_records/index.html.erb within layouts/application
+  [1m[36mStatsRecord Load (11.4ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records"[0m
+  ↳ app/views/stats_records/index.html.erb:4
+  Rendered stats_records/index.html.erb within layouts/application (Duration: 111.0ms | Allocations: 1835)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 178.8ms | Allocations: 8657)
+Completed 200 OK in 201ms (Views: 185.2ms | ActiveRecord: 11.4ms | Allocations: 9453)
+
+

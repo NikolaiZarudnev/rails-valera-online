@@ -3,7 +3,7 @@
   <div class="titlePage" id="titleCategory">WELCOME, <%= current_user.name %></div><br>
   <div class="logButtons">
     <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
-
+    
   </div>
 <% else %>
     <p class="titlePage" id="titleCategory">WELCOME</p><br>
