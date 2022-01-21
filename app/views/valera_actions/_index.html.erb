@@ -1,2 +1,7 @@
-
+<% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+        <%= msg %>
+     </div>
+<% end %>
 <%= render 'valera_actions/list' %>
+

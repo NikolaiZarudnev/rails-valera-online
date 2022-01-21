@@ -55,31 +55,52 @@ class UsersController < ApplicationController
     def user_update
       #redirectv_to
       action_effect = params[:user].permit!
-      asd = action_effect["conditions"]
-      #qwe = {"id":5, "attr_name":"tired", "min":0, "max":10, "attr_name_eff":"health", "value_eff":0, "valera_action_id":2, "created_at":"2022-01-20T22:48:22.699Z", "updated_at":"2022-01-20T22:48:22.699Z"}
-      asdcond = "\"conds\"[" + asd + "]"
-      qwe = asdcond.gsub('\"', '"').gsub('} {', '}, {').gsub('=>', ": ")
-      "{\"id\"=>4, \"attr_name\"=>\"alcohol\", \"min\"=>0, \"max\"=>70, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:05.201Z\", \"updated_at\"=>\"2022-01-20T22:48:05.201Z\"} {\"id\"=>5, \"attr_name\"=>\"tired\", \"min\"=>0, \"max\"=>10, \"attr_name_eff\"=>\"health\", \"value_eff\"=>0, \"valera_action_id\"=>2, \"created_at\"=>\"2022-01-20T22:48:22.699Z\", \"updated_at\"=>\"2022-01-20T22:48:22.699Z\"}"
-      eee = JSON.parse('{"cond": {"id": 4, "attr_name": "alcohol", "min": 0, "max": 70, "attr_name_eff": "health", "value_eff": 0, "valera_action_id": 2, "created_at": "2022-01-20T22:48:05.201Z", "updated_at": "2022-01-20T22:48:05.201Z"}, "cond": {"id": 6}}')
-      redirectv_to
-      if @user.update(stats_update action_effect)
-        redirectv_to @user
+      conds = ValeraAction.find(action_effect["action_id"]).conditions
+      
+      if action_available?(conds)
+        select_effects!(conds, action_effect)
+        new_stat = stats_update!(action_effect)
+        @user.update(new_stat)
+        redirect_to @user
       else
-        render 'edit'
+        redirect_to @user, notice: "You cannot do it"
       end
     end
 
-    def stats_update(action_effect)
-      conds_check action_effect
-      action_effect["health"] = action_effect["health"].to_i + @user.health
-      action_effect["alcohol"] = action_effect["alcohol"].to_i + @user.alcohol
-      action_effect["happy"] = action_effect["happy"].to_i + @user.happy
-      action_effect["tired"] = action_effect["tired"].to_i + @user.tired
-      action_effect["money"] = action_effect["money"].to_i + @user.money
-      action_effect
+    def stats_update!(action_effect)
+      new_stat = {"health"=> 0, "alcohol"=> 0, "happy"=> 0, "tired"=> 0, "money"=>0} 
+      new_stat["health"] = action_effect["health"].to_i + @user.health
+      new_stat["alcohol"] = action_effect["alcohol"].to_i + @user.alcohol
+      new_stat["happy"] = action_effect["happy"].to_i + @user.happy
+      new_stat["tired"] = action_effect["tired"].to_i + @user.tired
+      new_stat["money"] = action_effect["money"].to_i + @user.money
+      new_stat
     end
 
-    def conds_check(action_effect)
+    def select_effects!(conds, action_effect)
+      conds.each do |cond|
+        unless cond.attr_name_eff == 'none'
+          if cond_is_true?(cond)
+            action_effect[cond.attr_name_eff] = cond.value_eff
+          end
+        end
+      end
+    end
 
+    def action_available?(conds)
+      conds.each do |cond|
+        if cond.attr_name_eff == 'none'
+          if !cond_is_true?(cond)
+            return false
+          end
+        end
+      end
+      true
+    end
+
+    def cond_is_true?(condition)
+      if !condition.nil?
+        @user[condition.attr_name].between?(condition.min, condition.max)
+      end
     end
 end

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :conditions
   end
   resource :session
-  resources :users
+  resources :users do
+    resources :valera_actions
+  end
   root 'home#index'
 end
