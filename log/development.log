@@ -27373,3 +27373,974 @@ Processing by StatsRecordsController#index as HTML
 Completed 200 OK in 120ms (Views: 99.8ms | ActiveRecord: 12.1ms | Allocations: 8546)
 
 
+Started DELETE "/session" for 127.0.0.1 at 2022-01-22 05:16:33 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XiZCqzw5_y9audyp4wZkH0NFMMmsM1wVrVIX5qgdV0IbDjMeetpmDrYDJvcv856FU30QeFoZZ6DBwBa2koakMw"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 10ms (Allocations: 298)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 05:16:33 +0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 6714)
+Completed 200 OK in 71ms (Views: 65.6ms | Allocations: 7160)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2022-01-22 05:16:35 +0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 27.7ms | Allocations: 3718)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 54.9ms | Allocations: 4906)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 111.0ms | Allocations: 11587)
+Completed 200 OK in 150ms (Views: 134.8ms | Allocations: 12691)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 05:16:38 +0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 6708)
+Completed 200 OK in 83ms (Views: 81.9ms | Allocations: 7203)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2022-01-22 05:43:31 +0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 15.1ms | Allocations: 3297)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 23.6ms | Allocations: 3410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 87.3ms | Allocations: 9911)
+Completed 200 OK in 121ms (Views: 111.8ms | Allocations: 10355)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 05:43:33 +0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 92.8ms | Allocations: 6710)
+Completed 200 OK in 131ms (Views: 124.6ms | Allocations: 7157)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2022-01-22 05:44:21 +0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 42.3ms | Allocations: 3297)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 72.5ms | Allocations: 3410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 179.9ms | Allocations: 10512)
+Completed 200 OK in 213ms (Views: 211.6ms | Allocations: 10955)
+
+
+Started POST "/session" for 127.0.0.1 at 2022-01-22 05:44:27 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"T0C9roOWkA-n5rJOgj8I88B8O-dHceDSWtJUsDJ4yIfxqcb-AVqyy6uHYnA76fI2MFUeBsIp6IdCf6hIgL5cIw", "email"=>"admin@gmail.com", "name"=>"admin", "password"=>"[FILTERED]", "commit"=>"Save "}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 318ms (ActiveRecord: 17.0ms | Allocations: 4596)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 05:44:28 +0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 22ms (ActiveRecord: 1.0ms | Allocations: 1010)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 05:44:28 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.2ms | Allocations: 270)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.6ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 33.3ms | Allocations: 4896)
+  Rendered valera_actions/_index.html.erb (Duration: 42.6ms | Allocations: 4992)
+  Rendered users/show.html.erb within layouts/application (Duration: 51.9ms | Allocations: 5513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.6ms | Allocations: 12112)
+Completed 200 OK in 124ms (Views: 77.9ms | ActiveRecord: 7.5ms | Allocations: 14601)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:03:14 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"vjRo-7Q3a0TpWYcgWw9KZ2NUv5ccWqrdeYsYiJgzucv7HBlO8tTyZQXjfX6X-rD9c2yfJupwkWgVGRnYoqhKug", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (3.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (4.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Update (3.6ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "money" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["happy", -5], ["tired", 70], ["money", 400], ["updated_at", "2022-01-22 01:03:14.840502"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (8.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (16.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (9.3ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 422ms (ActiveRecord: 112.5ms | Allocations: 34076)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:03:15 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (13.8ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (4.5ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.9ms | Allocations: 364)
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (19.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 211.8ms | Allocations: 5103)
+  Rendered valera_actions/_index.html.erb (Duration: 225.6ms | Allocations: 5200)
+  Rendered users/show.html.erb within layouts/application (Duration: 249.0ms | Allocations: 5873)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 408.6ms | Allocations: 12677)
+Completed 200 OK in 521ms (Views: 412.6ms | ActiveRecord: 48.6ms | Allocations: 15420)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:03:35 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"HpKywuwPREWJNXk4JHy3WRfLRsJEG2QX0_0631K2elhbusN3quzdZGWPg2boiU3DB_Nmc7IxX6K_bzuPaC2JKQ", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (2.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (1.6ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.1ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 161ms (ActiveRecord: 18.4ms | Allocations: 7011)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:03:35 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (3.2ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.8ms | Allocations: 257)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 33.0ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 36.8ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 47.5ms | Allocations: 5492)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 70.6ms | Allocations: 12087)
+Completed 200 OK in 135ms (Views: 75.7ms | ActiveRecord: 10.3ms | Allocations: 14544)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:03:41 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"_rrMMaRfL8yVEgFgD_39mYtcSoWK4HTdAylD9_fzdXK7kr2E4ry27Xmo-z7DCAcDm2RqNHzKT2hvu0KnzWiGAw", "user"=>{"action_id"=>"3", "health"=>"0", "alcohol"=>"-10", "happy"=>"1", "tired"=>"10", "money"=>"0"}, "commit"=>"Relax in nature", "id"=>"1"}
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (1.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["happy", -4], ["tired", 80], ["updated_at", "2022-01-22 01:03:41.391570"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (2.3ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 212ms (ActiveRecord: 33.7ms | Allocations: 10120)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:03:41 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.1ms | Allocations: 257)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (3.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 33.0ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 37.2ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 47.7ms | Allocations: 5487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 12082)
+Completed 200 OK in 125ms (Views: 73.4ms | ActiveRecord: 8.3ms | Allocations: 14514)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:11:30 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (4.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 2.8ms | Allocations: 490)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (12.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 105.0ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 129.1ms | Allocations: 5204)
+  Rendered users/show.html.erb within layouts/application (Duration: 179.1ms | Allocations: 6578)
+  Rendered layout layouts/application.html.erb (Duration: 192.2ms | Allocations: 6652)
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 49.1ms | Allocations: 13202)
+
+
+  
+ActionView::Template::Error (undefined method `deep_stringify_keys' for "Go to work":String):
+    21:         <%= f.hidden_field :tired, value: valera_action.tired %>
+    22:         <%= f.hidden_field :money, value: valera_action.money %>
+    23: 
+    24:       <%= f.submit valera_action.name, id="#{valera_action.name}"%>
+    25:       </div>
+    26:       
+    27:     <% end %>
+  
+app/views/valera_actions/_list.html.erb:24
+app/views/valera_actions/_list.html.erb:5
+app/views/valera_actions/_list.html.erb:4
+app/views/valera_actions/_index.html.erb:2
+app/views/users/show.html.erb:25
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:12:05 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.2ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 2.0ms | Allocations: 490)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 39.4ms | Allocations: 5521)
+  Rendered valera_actions/_index.html.erb (Duration: 48.0ms | Allocations: 5830)
+  Rendered users/show.html.erb within layouts/application (Duration: 71.5ms | Allocations: 7198)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 194.5ms | Allocations: 14173)
+Completed 200 OK in 291ms (Views: 211.2ms | ActiveRecord: 8.4ms | Allocations: 17621)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:21:04 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (2.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 2.9ms | Allocations: 429)
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (3.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 63.4ms | Allocations: 10297)
+  Rendered valera_actions/_index.html.erb (Duration: 67.3ms | Allocations: 10397)
+  Rendered users/show.html.erb within layouts/application (Duration: 85.6ms | Allocations: 11145)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 130.7ms | Allocations: 17929)
+Completed 200 OK in 335ms (Views: 135.8ms | ActiveRecord: 44.8ms | Allocations: 33015)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:21:08 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"xFRiweBI6L7kg5im0OPurt17kznV_qixpoYFo-o5g0GBfBN0pqtxnwg5YvgcFhQ0zUOziCPUkwTKFATz0KJwMA", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 3.3ms | Allocations: 4154)
+
+
+  
+NameError (undefined local variable or method `redirect_tov' for #<UsersController:0x000000000195c8>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:27:in `update'
+Started PUT "/__web_console/repl_sessions/c01b3e6eddc478bf25c0e5410b431058" for 127.0.0.1 at 2022-01-22 08:21:13 +0700
+Started PUT "/__web_console/repl_sessions/c01b3e6eddc478bf25c0e5410b431058" for 127.0.0.1 at 2022-01-22 08:21:13 +0700
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:40:44 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"xFRiweBI6L7kg5im0OPurt17kznV_qixpoYFo-o5g0GBfBN0pqtxnwg5YvgcFhQ0zUOziCPUkwTKFATz0KJwMA", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (1.6ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (3.4ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (0.9ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 267ms (ActiveRecord: 39.6ms | Allocations: 30687)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:40:45 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.1ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.4ms | Allocations: 364)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (5.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 91.9ms | Allocations: 5103)
+  Rendered valera_actions/_index.html.erb (Duration: 101.8ms | Allocations: 5200)
+  Rendered users/show.html.erb within layouts/application (Duration: 116.9ms | Allocations: 5882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 151.7ms | Allocations: 12686)
+Completed 200 OK in 202ms (Views: 156.0ms | ActiveRecord: 9.7ms | Allocations: 15440)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:40:50 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"6mr9VQDQoiv73zwYD5R-4QcNI4oY9ZvB1cLYIr6nR-KvQozgRjM7ChdlxkbDYYR7FzUDO-7foHS5UNlyhDy0kw", "user"=>{"action_id"=>"New game"}, "commit"=>"New game", "id"=>"1"}
+  [1m[36mUser Load (23.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (6.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Update (5.9ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "money" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["happy", 0], ["tired", 0], ["money", 300], ["updated_at", "2022-01-22 01:40:50.904981"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (5.8ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (2.3ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 286ms (ActiveRecord: 70.2ms | Allocations: 6506)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:40:51 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (7.7ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (4.3ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 5.3ms | Allocations: 257)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.6ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 35.6ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 39.6ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 58.4ms | Allocations: 5489)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 89.5ms | Allocations: 12089)
+Completed 200 OK in 183ms (Views: 99.6ms | ActiveRecord: 16.3ms | Allocations: 14542)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:40:53 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"1fEs00oKm_u8cpePEqeNn1tuHGXFzKxWX2rkxToWjTuQ2V1mDOkC2lDIbdHeUncFS1Y81DPml-Mz-OWVAI1-Sg", "user"=>{"action_id"=>"3", "health"=>"0", "alcohol"=>"-10", "happy"=>"1", "tired"=>"10", "money"=>"0"}, "commit"=>"Relax in nature", "id"=>"1"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (80.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (3.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (3.1ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 3]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (20.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Exists? (5.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Update (7.8ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["happy", 1], ["tired", 10], ["updated_at", "2022-01-22 01:40:53.346173"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (14.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (17.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (18.0ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (10.8ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 613ms (ActiveRecord: 191.6ms | Allocations: 10123)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:40:53 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.9ms | Allocations: 257)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.7ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 31.9ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 35.5ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 51.7ms | Allocations: 5487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.0ms | Allocations: 12082)
+Completed 200 OK in 123ms (Views: 82.6ms | ActiveRecord: 7.8ms | Allocations: 14515)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:41:01 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"4uMQx7uYntuCJgj6Isfi0_mqLgsb3pnrronV-vOXAo6ny2Fy_XsH-m6c8qTuMhhJ6ZIOuu30ol7CG9SqyQzx_w", "user"=>{"action_id"=>"New game"}, "commit"=>"New game", "id"=>"1"}
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (11.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Update (4.2ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["happy", 0], ["tired", 0], ["updated_at", "2022-01-22 01:41:01.455603"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (8.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 259ms (ActiveRecord: 45.4ms | Allocations: 6249)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:41:01 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (10.4ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (19.3ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.7ms | Allocations: 257)
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (12.7ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 141.1ms | Allocations: 4893)
+  Rendered valera_actions/_index.html.erb (Duration: 146.2ms | Allocations: 4989)
+  Rendered users/show.html.erb within layouts/application (Duration: 171.6ms | Allocations: 5491)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 247.5ms | Allocations: 12091)
+Completed 200 OK in 455ms (Views: 249.9ms | ActiveRecord: 57.1ms | Allocations: 14524)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:41:04 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"9ItWzCLlsjIQSfTibnBLUbCqOfo9xJSuG7jy_ICRWtWxoyd5ZAYrE_zzDryihbHLoJIZS8vurxt3KvOsugqppA", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (2.8ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (6.0ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Exists? (9.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "money" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["happy", -5], ["tired", 70], ["money", 400], ["updated_at", "2022-01-22 01:41:04.608300"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.2ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 404ms (ActiveRecord: 59.1ms | Allocations: 10135)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:41:04 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (6.0ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (2.7ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 6.2ms | Allocations: 257)
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (16.0ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 95.4ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 114.8ms | Allocations: 4991)
+  Rendered users/show.html.erb within layouts/application (Duration: 137.1ms | Allocations: 5490)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 194.4ms | Allocations: 12085)
+Completed 200 OK in 370ms (Views: 194.8ms | ActiveRecord: 38.9ms | Allocations: 14518)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:42:56 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"Uqfn9kOXXI-A4XVcaG1NnfM8kb1dYgpwhJY1IVxuIWIXj5ZDBXTFrmxbjwKkmLcH4wSxDKtIMcXoBDRxZvXSEw", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (3.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (3.5ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (5.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 248ms (ActiveRecord: 23.9ms | Allocations: 6806)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:42:56 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:147:in `save_max_stat'
+  [1m[36mStatsRecord Load (2.1ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.8ms | Allocations: 257)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 33.2ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 37.8ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 49.4ms | Allocations: 5491)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 101.0ms | Allocations: 12093)
+Completed 200 OK in 160ms (Views: 110.5ms | ActiveRecord: 13.8ms | Allocations: 14536)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:47:47 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (2.2ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 7.8ms | Allocations: 429)
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 197.7ms | Allocations: 11106)
+  Rendered valera_actions/_index.html.erb (Duration: 201.5ms | Allocations: 11206)
+  Rendered users/show.html.erb within layouts/application (Duration: 225.6ms | Allocations: 11954)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 267.1ms | Allocations: 18740)
+Completed 200 OK in 451ms (Views: 247.4ms | ActiveRecord: 108.0ms | Allocations: 32048)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:47:51 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"k77S4pKdxxf0cYIOLmUPKRbZUwK0e_wLPXil7wg0i5PWlqNX1H5eNhjLeFDikPWzBuFzs0JRx75R6qS_Mq944g", "user"=>{"action_id"=>"New game"}, "commit"=>"New game", "id"=>"1"}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (20.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (5.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Update (6.3ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "money" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["happy", 0], ["tired", 0], ["money", 300], ["updated_at", "2022-01-22 01:47:52.199194"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (15.4ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (8.8ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 325ms (ActiveRecord: 77.6ms | Allocations: 6856)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:47:52 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (7.4ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (11.8ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 3.7ms | Allocations: 257)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.7ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 32.1ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 35.8ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 47.6ms | Allocations: 5500)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 94.0ms | Allocations: 12096)
+Completed 200 OK in 198ms (Views: 100.8ms | ActiveRecord: 28.9ms | Allocations: 14558)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:47:54 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"39zxTOHB6QMBBHAmcJE7uB35Xo2ZNqEkON5HYYyVp-aa9ID5pyJwIu2-ini8ZMEiDcF-PG8cmpFUTEYxtg5Ulw", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (23.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (13.3ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Exists? (14.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mUser Update (94.2ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "money" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["happy", -5], ["tired", 70], ["money", 400], ["updated_at", "2022-01-22 01:47:54.584097"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:63:in `user_update'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (35.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (29.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.0ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 937ms (ActiveRecord: 247.2ms | Allocations: 16777)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:47:55 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (2.4ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 1.4ms | Allocations: 295)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.5ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 32.3ms | Allocations: 4903)
+  Rendered valera_actions/_index.html.erb (Duration: 37.3ms | Allocations: 4999)
+  Rendered users/show.html.erb within layouts/application (Duration: 51.7ms | Allocations: 5563)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.3ms | Allocations: 12279)
+Completed 200 OK in 124ms (Views: 81.6ms | ActiveRecord: 8.1ms | Allocations: 14799)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:47:56 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"Xt_eUwdXBTzSXHv1FVKk3t9K1iKYSkEKJX9_alGoNkUb96_mQbScHT7mgavZp15Ez3L2k25ger9J7X46azPFNA", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (3.3ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+  [1m[36mCondition Load (18.7ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1[0m  [["valera_action_id", 2]]
+  ↳ app/controllers/users_controller.rb:100:in `action_available?'
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 38.7ms | Allocations: 6028)
+
+
+  
+NameError (undefined local variable or method `redirect_tov' for #<UsersController:0x0000000001e6e0>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:103:in `block in action_available?'
+app/controllers/users_controller.rb:100:in `action_available?'
+app/controllers/users_controller.rb:59:in `user_update'
+app/controllers/users_controller.rb:28:in `update'
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:48:12 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (15.2ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (3.1ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 0.8ms | Allocations: 257)
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (3.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 71.3ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 74.8ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 104.6ms | Allocations: 5487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 254.6ms | Allocations: 12087)
+Completed 200 OK in 410ms (Views: 268.6ms | ActiveRecord: 42.6ms | Allocations: 14518)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:49:29 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (12.5ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 14.2ms | Allocations: 429)
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (18.2ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 244.7ms | Allocations: 11127)
+  Rendered valera_actions/_index.html.erb (Duration: 250.1ms | Allocations: 11227)
+  Rendered users/show.html.erb within layouts/application (Duration: 288.8ms | Allocations: 11975)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 365.9ms | Allocations: 18759)
+Completed 200 OK in 590ms (Views: 305.3ms | ActiveRecord: 132.4ms | Allocations: 31889)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:49:32 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"jcuyP954tzMR8HwqSvb0iKVB0wFOqqxT_tAcfO5wuVqUARw42NqFcMyRjK_TA7PqbSq-K6GP8AC9uXkxsWMZbQ", "user"=>{"action_id"=>"New game"}, "commit"=>"New game", "id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Exists? (6.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mUser Update (4.3ms)[0m  [1m[33mUPDATE "users" SET "happy" = $1, "tired" = $2, "money" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["happy", 0], ["tired", 0], ["money", 300], ["updated_at", "2022-01-22 01:49:32.278391"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:41:in `user_save'
+  [1m[36mStatsRecord Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (1.6ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 223ms (ActiveRecord: 32.6ms | Allocations: 6875)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:49:32 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (15.2ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (17.4ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 5.1ms | Allocations: 257)
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (14.9ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 105.6ms | Allocations: 4892)
+  Rendered valera_actions/_index.html.erb (Duration: 115.4ms | Allocations: 4988)
+  Rendered users/show.html.erb within layouts/application (Duration: 137.5ms | Allocations: 5500)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 215.6ms | Allocations: 12100)
+Completed 200 OK in 339ms (Views: 203.3ms | ActiveRecord: 61.8ms | Allocations: 14563)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2022-01-22 08:49:34 +0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"7WPXXqqqH_aqdfjCAIoWV2WZO8M54ZKrf7iB_jAI3nGoS6br7EmG10bPApzMf-zNdaEbcs_LqR4TKoCuCpMtAA", "user"=>{"action_id"=>"2", "health"=>"0", "alcohol"=>"-30", "happy"=>"-5", "tired"=>"70", "money"=>"100"}, "commit"=>"Go to work", "id"=>"1"}
+  [1m[36mUser Load (20.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `update'
+  [1m[36mValeraAction Load (5.1ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions" WHERE "valera_actions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `user_update'
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 30.5ms | Allocations: 6407)
+
+
+  
+NameError (undefined local variable or method `redirect_tov' for #<UsersController:0x00000000021138>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:59:in `user_update'
+app/controllers/users_controller.rb:28:in `update'
+Started PUT "/__web_console/repl_sessions/a02cc20fa60077541b4b2d732ba76965" for 127.0.0.1 at 2022-01-22 08:49:47 +0700
+Started PUT "/__web_console/repl_sessions/a02cc20fa60077541b4b2d732ba76965" for 127.0.0.1 at 2022-01-22 08:49:54 +0700
+  [1m[36mCondition Load (0.8ms)[0m  [1m[34mSELECT "conditions".* FROM "conditions" WHERE "conditions"."valera_action_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["valera_action_id", 2], ["LIMIT", 11]]
+Started GET "/users/1" for 127.0.0.1 at 2022-01-22 08:52:57 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  [1m[36mStatsRecord Exists? (6.1ms)[0m  [1m[34mSELECT 1 AS one FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:148:in `save_max_stat'
+  [1m[36mStatsRecord Load (2.9ms)[0m  [1m[34mSELECT "stats_records".* FROM "stats_records" WHERE "stats_records"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:149:in `save_max_stat'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_new_game.html.erb (Duration: 4.4ms | Allocations: 297)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mValeraAction Load (1.4ms)[0m  [1m[34mSELECT "valera_actions".* FROM "valera_actions"[0m
+  ↳ app/views/valera_actions/_list.html.erb:4
+  Rendered valera_actions/_list.html.erb (Duration: 46.8ms | Allocations: 4899)
+  Rendered valera_actions/_index.html.erb (Duration: 52.2ms | Allocations: 4995)
+  Rendered users/show.html.erb within layouts/application (Duration: 66.5ms | Allocations: 5552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 119.8ms | Allocations: 12265)
+Completed 200 OK in 238ms (Views: 125.4ms | ActiveRecord: 15.6ms | Allocations: 14817)
+
+
