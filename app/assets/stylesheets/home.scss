@@ -19,3 +19,20 @@
     height: 4em;
     width: 10em;
 }
+
+.titlePage{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 1em;
+    background-color: #f3e4c9;
+    font-size: x-large;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#titleForm{
+    height: 4em;
+    background-color: #f0f0f0;
+    margin: 0;
+}
