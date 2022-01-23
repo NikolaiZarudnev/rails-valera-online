@@ -1,0 +1,21 @@
+<div class="editForm">
+<%= form_with url: session_path do |form| %>
+  
+  <p>
+    <%= form.label :email %><br>
+    <%= form.email_field :email, class: "editTextField" %>
+  </p>
+  <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name, class: "editTextField" %>
+  </p>
+  <p>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, class: "editTextField" %>
+  </p>
+  <p>
+    <%= form.submit class: "submitForm" %>
+  </p>
+ 
+<% end %>
+</div>

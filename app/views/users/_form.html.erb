@@ -1,0 +1,36 @@
+<div class="editForm">
+<%= form_with model: @user, local: true do |form| %>
+
+  <div id="error_explanation">
+    <% if @user.errors.any? %>
+      <%= pluralize(@user.errors.count, "error") %> prohibited
+      this user from being saved:
+          
+      <% @user.errors.full_messages.each do |msg| %>
+        <div> <%= msg %> </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div>
+    <p>
+      <%= form.label :email %><br>
+      <%= form.email_field :email, :required=>true, class: "editTextField" %> 
+    </p>
+    <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :name, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :password %><br>
+      <%= form.password_field :password,:required=>true, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :password_confirmation %><br>
+      <%= form.password_field :password_confirmation, :required=>true, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.submit class: "submitForm" %>
+    </p>
+  </div> 
+<% end %>
+</div>

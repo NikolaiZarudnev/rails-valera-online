@@ -1,0 +1,2 @@
+module ValeraActionsHelper
+end

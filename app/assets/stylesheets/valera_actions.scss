@@ -1,0 +1,58 @@
+// Place all the styles related to the ValeraActions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+input[type=submit] {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #47614f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+}
+.button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #8f9e90;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+
+.submitForm{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    cursor: pointer;
+    background-color: #d3d3d3;
+    height: 49px;
+    width: 100%;
+
+    transition: background-color 0.2s ease;
+}
+
+.logButtons{
+    display: flex;
+    justify-content: space-around;
+}

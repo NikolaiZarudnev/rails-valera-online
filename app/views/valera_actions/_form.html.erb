@@ -1,0 +1,47 @@
+<%= form_with model: @valera_action, local: true do |form| %>
+ 
+  <% if @valera_action.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@valera_action.errors.count, "error") %> prohibited
+        this valera_action from being saved:
+      </h2>
+      <ul>
+        <% @valera_action.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="editForm">
+    <p>
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :health %>
+      <%= form.number_field :health, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :alcohol %>
+      <%= form.number_field :alcohol, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :happy %>
+      <%= form.number_field :happy, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :tired %>
+      <%= form.number_field :tired, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :money %>
+      <%= form.number_field :money, class: "editTextField" %>
+    </p>
+  </div>
+
+  <%= form.submit class: "submitForm" %>
+
+ 
+<% end %>

@@ -1,0 +1,21 @@
+<div class="">
+  <div>
+    <p>
+      <strong>Condition:</strong>
+      <strong>attr_name:</strong>
+      <%= condition.attr_name %><br><br>
+      <strong>min:</strong>
+      <%= condition.min %><br><br>
+      <strong>max:</strong>
+      <%= condition.max %><br><br>
+      <strong>attr_name_eff:</strong>
+      <%= condition.attr_name_eff %>
+      <strong>value_eff:</strong>
+      <%= condition.value_eff %>
+    </p>
+  </div>
+  <%= link_to 'Редактировать', edit_valera_action_condition_path(condition.valera_action, condition), class: "" if user_signed_in?() %>
+  <%= link_to 'Убрать', [condition.valera_action, condition], class: "",
+              method: :delete,
+              data: { confirm: 'Are you sure?' } if user_signed_in?() %>
+</div>

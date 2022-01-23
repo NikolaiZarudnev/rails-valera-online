@@ -1,0 +1,29 @@
+
+<div class="editForm">
+  <%= form_with model: [ @valera_action, @condition ], local: true do |form| %>
+    
+    <p>
+      <%= form.label :attr_name %><br>
+      <%= form.select :attr_name, ['none', 'health', 'alcohol', 'happy', 'tired', 'money'], class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :min %><br>
+      <%= form.number_field :min, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :max %><br>
+      <%= form.number_field :max, class: "editTextField" %>
+    </p>
+    <p style="display:flex;">
+      <%= form.label :attr_name_eff %><br>
+      <%= form.select :attr_name_eff, ['none', 'health', 'alcohol', 'happy', 'tired', 'money'], class: "editTextField" %>
+    </p>  
+    <p>
+      <%= form.label :value_eff %><br>
+      <%= form.number_field :value_eff, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.submit class: "submitForm" %>
+    </p>
+  <% end %>
+</div>

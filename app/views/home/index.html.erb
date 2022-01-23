@@ -1,0 +1,14 @@
+
+<% if user_signed_in?() %>
+  <div class="titlePage" id="">WELCOME, <%= current_user.name %></div><br>
+  <div class="logButtons">
+    <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "logButtons" %>
+    
+  </div>
+<% else %>
+    <p class="titlePage" id="">WELCOME</p><br>
+    <div class="logButtons">
+      <%= link_to 'SIGN UP', new_user_path, class: "logButtons" %>
+      <%= link_to 'LOG IN', new_session_path, class: "logButtons" %>
+    </div>
+<% end %>

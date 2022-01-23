@@ -1,0 +1,36 @@
+
+<div class="">
+  <%= link_to 'Add action', new_valera_action_path, class: "" if user_signed_in?() %>
+  <% ValeraAction.all.each do |valera_action| %>
+    <%= form_with(model: @user, method: "patch", remote: true) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user valera from being saved:</h2>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div  class="button">
+        <%= f.hidden_field :action_id, value: valera_action.id %>
+        <%= f.hidden_field :health, value: valera_action.health %>
+        <%= f.hidden_field :alcohol, value: valera_action.alcohol %>
+        <%= f.hidden_field :happy, value: valera_action.happy %>
+        <%= f.hidden_field :tired, value: valera_action.tired %>
+        <%= f.hidden_field :money, value: valera_action.money %>
+
+      <%= f.submit valera_action.name%>
+      </div>
+      
+    <% end %>
+    
+    <%= link_to 'Show', valera_action_path(valera_action), class: "" if user_signed_in?()%>
+    <%= link_to 'Edit', edit_valera_action_path(valera_action), class: "" if user_signed_in?()%>
+    <%=  link_to 'Delete', valera_action_path(valera_action), class: "",
+                method: :delete,
+                data: { confirm: 'Are you sure?' } if user_signed_in?()%>
+  <% end %>
+</div>
+

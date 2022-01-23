@@ -1,0 +1,37 @@
+<%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "logButtons" %>
+<%= link_to 'Records', stats_records_path, class: "logButtons" %>
+
+<%= render 'new_game' %>
+<div class="listCards">
+  <div class="cart">
+    <strong>Health:</strong>
+    <%= @user.health%>/100<br><br>
+  </div>
+  <div class="cart">
+    <strong>Alcohol:</strong>
+      <%= @user.alcohol%>/100<br><br>
+  </div>
+  <div class="cart">
+    <strong>Happy:</strong>
+      <%= @user.happy%>/10<br><br>
+  </div>
+  <div class="cart">
+    <strong>Tired:</strong>
+      <%= @user.tired%>/100<br><br>
+  </div>
+  <div class="cart">
+    <strong>Money:</strong>
+      <%= @user.money%>$<br><br>
+  </div>
+      
+</div>
+<div class="closebtn">
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-info">
+          <%= msg %>
+          <%= render 'new_game' if msg == "You died."%>
+        </div>
+      <% end %>
+</div>
+      
+        <%= render 'valera_actions/index'%><br><br>
