@@ -49,32 +49,32 @@ class UsersController < ApplicationController
 
   def user_update
     action_effect = params[:user].permit!
-    if action_effect["action_id"] == "New game"
+    if action_effect['action_id'] == 'New game'
       new_stat
       user_save
       return
     end
 
-    conds = ValeraAction.find(action_effect["action_id"]).conditions
+    conds = ValeraAction.find(action_effect['action_id']).conditions
     if action_available?(conds)
       select_effects!(conds, action_effect)
       updated_stat = stats_update(action_effect)
       validate_stats!(updated_stat)
       @user.update(updated_stat)
-      flash.notice = "You died." if dead?
+      flash.notice = 'You died.' if dead?
     else
-      flash.notice = "You cannot do it."
+      flash.notice = 'You cannot do it.'
     end
     user_save
   end
 
   def stats_update(action_effect)
-    updated_stat = { "health" => 0, "alcohol" => 0, "happy" => 0, "tired" => 0, "money" => 0 }
-    updated_stat["health"] = action_effect["health"].to_i + @user.health
-    updated_stat["alcohol"] = action_effect["alcohol"].to_i + @user.alcohol
-    updated_stat["happy"] = action_effect["happy"].to_i + @user.happy
-    updated_stat["tired"] = action_effect["tired"].to_i + @user.tired
-    updated_stat["money"] = action_effect["money"].to_i + @user.money
+    updated_stat = { 'health' => 0, 'alcohol' => 0, 'happy' => 0, 'tired' => 0, 'money' => 0 }
+    updated_stat['health'] = action_effect['health'].to_i + @user.health
+    updated_stat['alcohol'] = action_effect['alcohol'].to_i + @user.alcohol
+    updated_stat['happy'] = action_effect['happy'].to_i + @user.happy
+    updated_stat['tired'] = action_effect['tired'].to_i + @user.tired
+    updated_stat['money'] = action_effect['money'].to_i + @user.money
     updated_stat
   end
 
@@ -99,16 +99,17 @@ class UsersController < ApplicationController
   def action_available?(conds)
     conds.each do |cond|
       next unless cond.attr_name_eff == 'none'
-        if !cond_is_true?(cond)
-          flash.alert = "Your '#{cond.attr_name}' should be between #{cond.min} and #{cond.max}."
-          return false
-        end
+
+      unless cond_is_true?(cond)
+        flash.alert = "Your '#{cond.attr_name}' should be between #{cond.min} and #{cond.max}."
+        return false
+      end
     end
     true
   end
 
   def cond_is_true?(condition)
-    @user[condition.attr_name].between?(condition.min, condition.max) if !condition.nil?
+    @user[condition.attr_name].between?(condition.min, condition.max) unless condition.nil?
   end
 
   def dead?
@@ -116,10 +117,10 @@ class UsersController < ApplicationController
   end
 
   def validate_stats!(stats)
-    stats["health"] = valid_health(stats["health"])
-    stats["alcohol"] = valid_alcohol(stats["alcohol"])
-    stats["happy"] = valid_happy(stats["happy"])
-    stats["tired"] = valid_tired(stats["tired"])
+    stats['health'] = valid_health(stats['health'])
+    stats['alcohol'] = valid_alcohol(stats['alcohol'])
+    stats['happy'] = valid_happy(stats['happy'])
+    stats['tired'] = valid_tired(stats['tired'])
   end
 
   def valid_health(health)

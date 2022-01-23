@@ -9,7 +9,7 @@ describe 'the sign up process', type: :feature do
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Create User'
-    expect(current_path).to eq("/users/#{User.last.id}")
+    expect(page).to have_current_path("/users/#{User.last.id}", ignore_query: true)
     expect(page).to have_text('LOG OUT Records')
   end
 end

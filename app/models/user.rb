@@ -11,5 +11,4 @@ class User < ApplicationRecord
   validates :money, numericality: { only_integer: true }
 
   has_one :stats_record
-
 end

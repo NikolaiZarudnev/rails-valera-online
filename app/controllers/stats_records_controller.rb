@@ -10,7 +10,7 @@ class StatsRecordsController < ApplicationController
   def edit
     @stats_record = StatsRecord.find(params[:id])
   end
-  
+
   def create
     @stats_record = StatsRecord.create(stats_record_params)
     redirect_to root_path
@@ -47,5 +47,3 @@ class StatsRecordsController < ApplicationController
     end
   end
 end
-
-
