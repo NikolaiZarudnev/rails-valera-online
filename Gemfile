@@ -22,11 +22,20 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'stimulus-rails'
+
+gem 'turbo-rails'
+
+gem 'importmap-rails'
+
+gem 'sprockets-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'capybara'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+gem 'diff-lcs', '>= 1.2.0', '< 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
