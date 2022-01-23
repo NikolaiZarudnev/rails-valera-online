@@ -8,10 +8,5 @@ RSpec.describe 'ValeraActions', type: :request do
 
       expect(subject).to eq(valera_action.name)
     end
-
-    it 'assigns the all valera_actions' do
-      subject { ValeraAction.all }
-      expect(subject).to eq('test')
-    end
   end
 end

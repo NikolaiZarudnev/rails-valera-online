@@ -1,5 +1,7 @@
 class ValeraAction < ApplicationRecord
+  # rubocop:disable Rails/UniqueValidationWithoutIndex
   validates :name, presence: true, uniqueness: true
+  # rubocop:enable Rails/UniqueValidationWithoutIndex
   validates :health, presence: true
   validates :alcohol, presence: true
   validates :happy, presence: true

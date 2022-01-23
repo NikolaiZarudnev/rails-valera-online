@@ -8,10 +8,5 @@ RSpec.describe 'StatsRecords', type: :request do
 
       expect(subject).to eq(stats_record.name)
     end
-
-    it 'assigns the all stats_records' do
-      subject { StatsRecord.all }
-      expect(subject).to eq('test')
-    end
   end
 end

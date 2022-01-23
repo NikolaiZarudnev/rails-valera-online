@@ -8,10 +8,5 @@ RSpec.describe 'Users', type: :request do
 
       expect(subject).to eq(user.email)
     end
-
-    it 'assigns the all users' do
-      subject { User.all }
-      expect(subject).to eq('test@mail.com')
-    end
   end
 end

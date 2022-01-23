@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include UsersHelper
   def show
     @user = User.find(params[:id])
     save_max_stat
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    new_stat
+    new_stat!(@user)
     user_save
   end
 
@@ -50,49 +51,23 @@ class UsersController < ApplicationController
   def user_update
     action_effect = params[:user].permit!
     if action_effect['action_id'] == 'New game'
-      new_stat
-      user_save
-      return
-    end
-
-    conds = ValeraAction.find(action_effect['action_id']).conditions
-    if action_available?(conds)
-      select_effects!(conds, action_effect)
-      updated_stat = stats_update(action_effect)
-      validate_stats!(updated_stat)
-      @user.update(updated_stat)
-      flash.notice = 'You died.' if dead?
+      new_stat!(@user)
     else
-      flash.notice = 'You cannot do it.'
+      do_action action_effect
     end
     user_save
   end
 
-  def stats_update(action_effect)
-    updated_stat = { 'health' => 0, 'alcohol' => 0, 'happy' => 0, 'tired' => 0, 'money' => 0 }
-    updated_stat['health'] = action_effect['health'].to_i + @user.health
-    updated_stat['alcohol'] = action_effect['alcohol'].to_i + @user.alcohol
-    updated_stat['happy'] = action_effect['happy'].to_i + @user.happy
-    updated_stat['tired'] = action_effect['tired'].to_i + @user.tired
-    updated_stat['money'] = action_effect['money'].to_i + @user.money
-    updated_stat
-  end
-
-  def new_stat
-    @user.health = 100
-    @user.alcohol = 0
-    @user.happy = 0
-    @user.tired = 0
-    @user.money = 300
-  end
-
-  def select_effects!(conds, action_effect)
-    conds.each do |cond|
-      unless cond.attr_name_eff == 'none'
-        if cond_is_true?(cond)
-          action_effect[cond.attr_name_eff] = cond.value_eff
-        end
-      end
+  def do_action(action_effect)
+    conds = ValeraAction.find(action_effect['action_id']).conditions
+    if action_available?(conds)
+      select_effects!(conds, action_effect, @user)
+      updated_stat = stats_update(action_effect, @user)
+      validate_stats!(updated_stat, @user)
+      @user.update(updated_stat)
+      flash.notice = 'You died.' if dead?(@user)
+    else
+      flash.notice = 'You cannot do it.'
     end
   end
 
@@ -100,7 +75,7 @@ class UsersController < ApplicationController
     conds.each do |cond|
       next unless cond.attr_name_eff == 'none'
 
-      unless cond_is_true?(cond)
+      unless cond_is_true?(cond, @user)
         flash.alert = "Your '#{cond.attr_name}' should be between #{cond.min} and #{cond.max}."
         return false
       end
@@ -108,44 +83,8 @@ class UsersController < ApplicationController
     true
   end
 
-  def cond_is_true?(condition)
-    @user[condition.attr_name].between?(condition.min, condition.max) unless condition.nil?
-  end
-
-  def dead?
-    @user.health.zero? || @user.happy == -10 || @user.money <= -100 || @user.tired == 100
-  end
-
-  def validate_stats!(stats)
-    stats['health'] = valid_health(stats['health'])
-    stats['alcohol'] = valid_alcohol(stats['alcohol'])
-    stats['happy'] = valid_happy(stats['happy'])
-    stats['tired'] = valid_tired(stats['tired'])
-  end
-
-  def valid_health(health)
-    health = validate(health, 0, 100)
-  end
-
-  def valid_alcohol(alcohol)
-    @user.health -= validate(@user.alcohol - alcohol, 0, @user.health) if @user.alcohol < alcohol.abs
-    alcohol = validate(alcohol, 0, 100)
-  end
-
-  def valid_happy(happy)
-    happy = validate(happy, -10, 10)
-  end
-
-  def valid_tired(tired)
-    tired = validate(tired, 0, 100)
-  end
-
-  def validate(value, min, max)
-    [[value, max].min, min].max
-  end
-
   def save_max_stat
-    if @stats_record = StatsRecord.exists?(@user.id)
+    if StatsRecord.exists?(@user.id)
       @stats_record = StatsRecord.find(@user.id)
       @stats_record.money = [@stats_record.money, @user.money].max
     else
